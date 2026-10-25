@@ -1,0 +1,1255 @@
+# MASTER PROMPT: BUILD A PREMIUM, FULLY RESPONSIVE VALTER WATCH E-COMMERCE WEBSITE
+
+Act as an expert luxury website designer, senior UI/UX engineer, full-stack developer, e-commerce strategist, and professional brand art director. Analyze the uploaded reference image and build a complete, polished, production-ready luxury watch e-commerce website inspired by its visual style.
+
+The website brand name is **VALTER**.
+
+The website must combine the sophisticated aesthetic of a luxury watch boutique with the functionality of a modern online shopping store. Preserve the reference image's overall design direction: deep forest-green backgrounds, warm ivory sections, champagne-gold accents, elegant serif typography, premium product photography, spacious layouts, refined product cards, editorial lifestyle imagery, and a clean, professional footer.
+
+However, create an original VALTER identity. Do not copy the reference brand's name, logo, exact text, or business identity.
+
+**IMPORTANT: This is a complete watch shopping website, not a single-category women's watch website.** The store must feature six major shopping collections:
+
+1. Men's Watches
+2. Women's Watches
+3. Couple Watches
+4. Luxury Watches
+5. Sports Watches
+6. Smart Watches
+
+All six collections must be clearly visible, beautifully presented, individually accessible, and fully functional throughout the website.
+
+Build the actual website and its working features. Do not merely provide a design description, wireframe, or code outline.
+
+---
+
+## 1. OVERALL WEBSITE STYLE AND CREATIVE DIRECTION
+
+Create a luxury e-commerce experience that feels elegant, premium, modern, trustworthy, and ready to present to a real client.
+
+The visual direction should resemble a high-end watch boutique with an editorial fashion aesthetic.
+
+Use:
+
+- Deep forest-green hero and footer sections.
+- Warm ivory and cream backgrounds for product collections.
+- Champagne-gold details and fine decorative borders.
+- Sophisticated serif headlines.
+- Clean sans-serif navigation and body typography.
+- Large, realistic luxury watch photographs.
+- Consistent product image proportions.
+- Generous whitespace.
+- Fine divider lines.
+- Subtle shadows and carefully controlled gradients.
+- Smooth, understated interactions.
+- Consistent spacing and alignment.
+
+Avoid generic e-commerce templates, excessive rounded cards, bright neon colors, cluttered layouts, cartoon graphics, heavy shadows, oversized gradients, and excessive animations.
+
+The finished website should look like a professionally art-directed luxury watch brand, not a basic generated storefront.
+
+## 2. BRAND IDENTITY: VALTER
+
+Brand name: VALTER
+
+Brand positioning: Contemporary timepieces for people who value precision, craftsmanship, personal style, and timeless design.
+
+Brand personality:
+
+- Elegant.
+- Confident.
+- Modern.
+- Refined.
+- Trustworthy.
+- Versatile.
+- Premium.
+
+Create an original minimalist brand emblem inspired by watchmaking geometry, such as a fine circular dial, a subtle abstract V, or elegant geometric hands.
+
+Pair the emblem with the VALTER wordmark using a refined serif font.
+
+Create a consistent brand identity for the header, footer, favicon, product pages, promotional banners, and website metadata.
+
+Do not reproduce existing luxury watch trademarks or logos.
+
+Suggested brand tagline:
+
+“TIMELESS DESIGN. DISTINCTIVE CHARACTER.”
+
+## 3. COLOR PALETTE
+
+Use the following design system consistently across all pages.
+
+- Primary forest green: #082F2B
+- Deep emerald: #0B3B35
+- Dark background: #052522
+- Warm ivory: #F4F0E9
+- Soft cream: #EAE3D8
+- Champagne gold: #B89A6A
+- Muted bronze: #90764F
+- Primary dark text: #1C2925
+- Secondary text: #716F66
+- Light text: #F5F0E8
+- Light border: #DED6CA
+- Dark border: #31514A
+
+Use dark green for the hero, navigation, promotional banners, primary buttons, and footer.
+
+Use ivory for collection sections, product grids, category sections, brand story content, and informational pages.
+
+Use gold sparingly for icons, fine borders, small labels, and subtle decorative elements.
+
+Maintain accessible contrast for text and buttons. Avoid excessive gold text on light backgrounds.
+
+Define these colors as reusable CSS custom properties so the entire design can be updated consistently.
+
+## 4. TYPOGRAPHY
+
+Use an elegant editorial typography system.
+
+Headings: Cormorant Garamond or Playfair Display.
+
+Body text, navigation, buttons, prices, forms, and utility elements: Inter.
+
+Typography hierarchy:
+
+- Desktop hero headline: 58–76px.
+- Section headings: 34–46px.
+- Page headings: 38–52px.
+- Product names: 13–16px.
+- Product prices: 13–15px.
+- Body text: 14–17px.
+- Navigation: 10–12px uppercase.
+- Eyebrow labels: 9–11px uppercase with generous letter spacing.
+- Buttons: 10–12px uppercase.
+
+Use responsive font sizing with clamp(), comfortable line height, and balanced letter spacing.
+
+Keep headings elegant, body text readable, and navigation understated.
+
+## 5. HEADER AND NAVIGATION
+
+Build a premium header with a height of approximately 76–88px on desktop.
+
+Desktop layout:
+
+- VALTER emblem and wordmark on the left.
+- Main navigation centered.
+- Search, account, wishlist, and shopping bag icons on the right.
+- Deep forest-green background.
+- Subtle bottom border.
+- Light-colored text with restrained gold accents.
+
+Main navigation:
+
+- HOME
+- MEN
+- WOMEN
+- COUPLES
+- COLLECTIONS
+- OUR STORY
+- CONTACT
+
+The COLLECTIONS navigation item must open a polished dropdown or mega menu containing all six major shopping categories:
+
+- Men's Watches
+- Women's Watches
+- Couple Watches
+- Luxury Watches
+- Sports Watches
+- Smart Watches
+
+Each category should include a relevant thumbnail or image, a short description, and a link to its collection page.
+
+The mega menu should feel premium, with an ivory background, dark-green text, subtle borders, generous spacing, and smooth transitions.
+
+Right-side icons:
+
+- Search: opens a functional search overlay.
+- Account: opens a sign-in or account interface.
+- Wishlist: opens saved products.
+- Shopping bag: opens the cart drawer and displays the current item count.
+
+Header behavior:
+
+- Sticky navigation with a subtle background transition when scrolling.
+- Smooth hover states.
+- Accessible keyboard navigation.
+- Clear focus indicators.
+- No overlap with the page content.
+
+Mobile header:
+
+- VALTER logo on the left.
+- Search, shopping bag, and menu controls on the right, adapting to available width.
+- A polished slide-in navigation drawer.
+- All six watch categories accessible within the drawer.
+- Accessible open and close buttons.
+- Escape-key support.
+- Background scrolling disabled while the drawer is open.
+
+## 6. HERO SECTION
+
+Create a cinematic, luxury-style homepage hero inspired by the reference image.
+
+Desktop layout:
+
+- Full-width deep forest-green background.
+- Approximately 480–560px high.
+- Left column for copy and CTAs.
+- Right column for large luxury watch photography.
+- Image should occupy approximately 50–60% of the hero.
+- Soft dark-green gradients blend the image into the background.
+
+Hero eyebrow:
+
+“TIMELESS BY DESIGN”
+
+Main headline:
+
+“More Than a Watch. A Statement.”
+
+Supporting text:
+
+“Discover distinctive timepieces for every style, every occasion, and every moment that matters.”
+
+Primary CTA:
+
+“EXPLORE ALL WATCHES”
+
+Secondary CTA:
+
+“DISCOVER OUR COLLECTIONS”
+
+The primary CTA should lead to the complete shop page. The secondary CTA should lead to the six-category collection section.
+
+Image direction:\
+Use a premium, realistic watch with a deep emerald dial, refined gold-tone case, and a detailed bracelet, photographed against a dark green setting.
+
+The watch must be the main visual focus, with realistic reflections, natural shadows, elegant lighting, and high-quality material textures.
+
+Do not add excessive text or decorative objects to the image.
+
+Mobile hero:
+
+- Stack text and imagery vertically.
+- Keep the main heading prominent.
+- Show the primary CTA near the heading.
+- Display the watch image at a generous size.
+- Preserve the dark green background and luxury atmosphere.
+- Prevent text and image overlap.
+
+## 7. TRUST AND SERVICE STRIP
+
+Immediately after the hero, add a warm ivory trust strip with four compact items.
+
+Use refined line icons and subtle vertical dividers.
+
+Items:
+
+**QUALITY-FOCUSED DESIGN**\
+“Considered details in every timepiece.”
+
+**SECURE SHOPPING**\
+“A protected and straightforward checkout.”
+
+**CUSTOMER SUPPORT**\
+“Help when you need it.”
+
+**GIFT-READY PRESENTATION**\
+“Thoughtful presentation for special moments.”
+
+Use Lucide icons or inline SVG.
+
+Desktop: four horizontally aligned items.
+
+Mobile: two-column grid or a neatly stacked layout.
+
+Only display operational promises the business can genuinely fulfill. Do not invent warranty periods, shipping times, certifications, or guaranteed service commitments.
+
+## 8. SIX MAIN WATCH COLLECTIONS — THE MOST IMPORTANT SECTION
+
+Create a visually impressive section introducing all six categories.
+
+This section must appear prominently on the homepage, immediately after the trust strip or featured collection introduction.
+
+Section eyebrow:
+
+“EXPLORE THE VALTER WORLD”
+
+Main heading:
+
+“A Timepiece for Every Style”
+
+Supporting text:
+
+“From refined everyday essentials to statement-making luxury and modern technology, discover the collection that speaks to you.”
+
+Create six individual category cards with unique, high-quality photographs.
+
+Use a balanced three-column by two-row layout on desktop. On tablets, use two columns. On mobile, use two columns when card text and images remain readable, or one column on narrower screens.
+
+Every card must have:
+
+- A unique image.
+- A category title.
+- A short description.
+- A clear “EXPLORE COLLECTION” link.
+- A subtle hover effect.
+- A consistent image aspect ratio.
+- A clickable area that opens the correct collection page.
+
+### Category 1: MEN'S WATCHES
+
+Image direction:\
+A refined men's watch with a black, deep green, or navy dial, a polished stainless-steel or gold-tone case, and a premium metal bracelet or leather strap. Use masculine editorial styling without stereotypes.
+
+Title:\
+“Men's Watches”
+
+Description:\
+“Distinctive timepieces for everyday confidence and timeless style.”
+
+CTA:\
+“SHOP MEN'S WATCHES”
+
+Link to:\
+`/collections/mens-watches`
+
+### Category 2: WOMEN'S WATCHES
+
+Image direction:\
+A delicate yet sophisticated watch with an elegant round dial, refined gold-tone or silver-tone bracelet, and a warm neutral studio background.
+
+Title:\
+“Women's Watches”
+
+Description:\
+“Elegant details and graceful designs for every occasion.”
+
+CTA:\
+“SHOP WOMEN'S WATCHES”
+
+Link to:\
+`/collections/womens-watches`
+
+### Category 3: COUPLE WATCHES
+
+Image direction:\
+Two coordinated watches displayed together, one with a slightly larger case and the other with a complementary smaller case. Use matching or coordinated dials, metal finishes, or straps.
+
+Title:\
+“Couple Watches”
+
+Description:\
+“Complementary timepieces made to celebrate shared moments.”
+
+CTA:\
+“SHOP COUPLE WATCHES”
+
+Link to:\
+`/collections/couple-watches`
+
+Display two watches clearly in the same image. Do not use a single watch and pretend it represents a pair.
+
+### Category 4: LUXURY WATCHES
+
+Image direction:\
+A dramatic, premium timepiece with refined finishing, a textured dial, polished case, intricate bracelet details, and cinematic lighting against deep green or charcoal.
+
+Title:\
+“Luxury Watches”
+
+Description:\
+“Exceptional-looking designs with an unmistakable sense of refinement.”
+
+CTA:\
+“SHOP LUXURY WATCHES”
+
+Link to:\
+`/collections/luxury-watches`
+
+Do not make unsupported claims about precious metals, Swiss manufacturing, or luxury-brand affiliations.
+
+### Category 5: SPORTS WATCHES
+
+Image direction:\
+A durable-looking sports watch with a bold dial, strong case design, functional markings, and a robust rubber, metal, or fabric strap. Use a sophisticated outdoor or dark studio setting.
+
+Title:\
+“Sports Watches”
+
+Description:\
+“Dynamic designs built around an active, modern lifestyle.”
+
+CTA:\
+“SHOP SPORTS WATCHES”
+
+Link to:\
+`/collections/sports-watches`
+
+Do not claim waterproof ratings, military certification, shock resistance, or professional sports performance unless supported by the product specifications.
+
+### Category 6: SMART WATCHES
+
+Image direction:\
+A modern smartwatch with a crisp digital display, elegant metal or silicone strap, realistic screen details, and clean contemporary lighting.
+
+Title:\
+“Smart Watches”
+
+Description:\
+“Modern functionality and contemporary design for everyday life.”
+
+CTA:\
+“SHOP SMART WATCHES”
+
+Link to:\
+`/collections/smart-watches`
+
+Do not show unrealistic floating interfaces or claim unsupported features such as medical-grade monitoring, GPS, or universal device compatibility.
+
+### Category card visual styling
+
+Use warm ivory backgrounds and refined photographic presentation.
+
+Each image should fill the top portion of its card. Place the category name and description underneath, with the CTA aligned consistently.
+
+Use:
+
+- Subtle image zoom on hover.
+- A fine gold divider or understated border.
+- Elegant serif category headings.
+- Small uppercase CTA text.
+- Consistent spacing.
+- Minimal or no heavy shadow.
+- Square or subtly rounded corners.
+
+The six cards must be distinct, professional, and immediately understandable.
+
+Do not turn these six categories into six simple text links. They must be a major visual feature of the homepage.
+
+## 9. FEATURED WATCHES
+
+After the six category cards, create a premium featured collection section.
+
+Eyebrow:
+
+“THE VALTER EDIT”
+
+Heading:
+
+“Selected for You”
+
+Supporting text:
+
+“Explore timepieces that bring together considered design and distinctive character.”
+
+Display four products per row on larger desktop screens, three on medium screens where appropriate, and two on mobile when readable.
+
+Suggested initial catalog:
+
+1. The Evergreen — $425 — Men's Watches.
+2. The Meridian — $295 — Women's Watches.
+3. The Together Set — $520 — Couple Watches.
+4. The Nocturne — $450 — Luxury Watches.
+5. The Velocity — $185 — Sports Watches.
+6. The Pulse — $225 — Smart Watches.
+7. The Sterling — $350 — Men's Watches.
+8. The Solstice — $325 — Women's Watches.
+
+These prices are illustrative starting values. Keep prices, currency, product descriptions, images, and availability editable in a central product data file. Do not represent the catalog as a verified real inventory.
+
+Each product should include:
+
+- Unique product name.
+- Product image.
+- Price.
+- Category.
+- Product details link.
+- Add-to-cart control.
+- Wishlist control.
+- Optional product badge only when supported by data.
+
+Product cards:
+
+- Consistent image dimensions.
+- Cream or warm neutral image backgrounds.
+- Minimal text.
+- Clean product name and price.
+- Subtle hover animation.
+- Optional secondary image on hover.
+- Clear keyboard focus states.
+
+Add a “VIEW ALL WATCHES” CTA leading to the complete shop.
+
+## 10. COMPLETE SHOP PAGE
+
+Create a dedicated all-products page at `/shop`.
+
+Page heading:
+
+“Discover the VALTER Collection”
+
+Supporting text:
+
+“Explore thoughtfully selected timepieces for every style and occasion.”
+
+At the top of the page, display six category filters:
+
+- All Watches
+- Men's Watches
+- Women's Watches
+- Couple Watches
+- Luxury Watches
+- Sports Watches
+- Smart Watches
+
+Allow the filters to update the displayed products instantly.
+
+Include:
+
+- Search by product name.
+- Category filtering.
+- Sorting by featured, price low to high, price high to low, and newest when date information exists.
+- A clear filters button.
+- A product count based on actual results.
+- An empty-results message.
+- Responsive product grid.
+
+Keep the filter interface elegant. On mobile, use compact dropdowns or a slide-in filter drawer.
+
+Never display filters that do not work.
+
+## 11. INDIVIDUAL COLLECTION PAGES
+
+Create a dedicated collection page for each category.
+
+Required routes:
+
+- `/collections/mens-watches`
+- `/collections/womens-watches`
+- `/collections/couple-watches`
+- `/collections/luxury-watches`
+- `/collections/sports-watches`
+- `/collections/smart-watches`
+
+Every collection page must include:
+
+- Category-specific heading.
+- Unique introduction.
+- Relevant category hero image or banner.
+- Product count.
+- Working product grid.
+- Filters and sorting.
+- Product details links.
+- Breadcrumb navigation.
+- Responsive design.
+
+Suggested headings and introductions:
+
+Men's Watches:\
+“Designed with Character”\
+“Explore considered designs that bring confidence and versatility to everyday wear.”
+
+Women's Watches:\
+“Elegance in Every Detail”\
+“Discover refined timepieces designed to complement personal style.”
+
+Couple Watches:\
+“Two Timepieces. One Story.”\
+“Explore coordinated watches created to celebrate shared occasions.”
+
+Luxury Watches:\
+“An Elevated Perspective”\
+“Discover statement-making designs with refined details and a premium aesthetic.”
+
+Sports Watches:\
+“Ready for Your Everyday”\
+“Explore dynamic designs inspired by movement, versatility, and modern living.”
+
+Smart Watches:\
+“Modern Time, Connected”\
+“Discover contemporary watches that bring technology and personal style together.”
+
+Only show products assigned to the relevant collection. A couple-watch product should clearly identify whether the listed price is for one watch or a pair.
+
+## 12. BRAND STORY SECTION
+
+Create a split editorial section inspired by the reference image.
+
+Desktop layout:
+
+- Left side: lifestyle photograph of a person wearing an elegant wristwatch.
+- Right side: warm ivory background with text and CTA.
+- Approximately equal column widths.
+- Comfortable spacing.
+- Fine decorative line art in the background.
+
+Eyebrow:
+
+“THE VALTER PHILOSOPHY”
+
+Heading:
+
+“Crafted with Purpose”
+
+Body:
+
+“At VALTER, we believe a timepiece is more than an accessory. It is a reflection of personal style, individual character, and the moments that shape our lives. Our approach brings together thoughtful proportions, refined details, and a modern appreciation for timeless design.”
+
+CTA:
+
+“DISCOVER OUR STORY”
+
+Link to `/about`.
+
+Use natural lighting, realistic wrist and watch details, elegant fabric textures, and a softly blurred background.
+
+On mobile, stack the image and content vertically.
+
+## 13. NEW ARRIVALS SECTION
+
+Create a separate section showcasing new designs.
+
+Eyebrow:
+
+“JUST ARRIVED”
+
+Heading:
+
+“Fresh Perspectives on Time”
+
+Supporting text:
+
+“Discover the latest additions across the VALTER collections.”
+
+Display four products with distinct photography and category labels.
+
+CTA:
+
+“EXPLORE NEW ARRIVALS”
+
+Only use a New Arrival label when the product data supports it.
+
+## 14. LUXURY CAMPAIGN BANNER
+
+Create a cinematic full-width campaign section.
+
+Background:\
+Deep emerald and forest green with subtle gradients.
+
+Layout:
+
+- Brand statement on the left.
+- Large editorial headline.
+- Refined CTA.
+- Dramatic watch close-up on the right.
+
+Eyebrow:
+
+“THE ART OF TIME”
+
+Heading:
+
+“Elegance in Every Detail”
+
+Supporting copy:
+
+“Find the timepiece that feels unmistakably yours.”
+
+CTA:
+
+“DISCOVER VALTER”
+
+Use an original campaign image different from the main hero photograph.
+
+Keep the image beautifully integrated with the background. Use natural shadows and subtle gold highlights.
+
+On mobile, stack the content and image without hiding important details.
+
+## 15. COUPLE WATCHES FEATURE
+
+Create an additional promotional section specifically for couple watches.
+
+This section is important because couple watches require a different shopping presentation from individual men's and women's watches.
+
+Use a warm, romantic editorial composition featuring two coordinated watches on a neutral surface. Keep the design sophisticated and understated, avoiding excessive hearts or decorative symbols.
+
+Heading:
+
+“Made to Go Together”
+
+Supporting text:
+
+“Discover coordinated timepieces designed to celebrate meaningful moments, thoughtful gifts, and shared memories.”
+
+CTA:
+
+“EXPLORE COUPLE WATCHES”
+
+Link to `/collections/couple-watches`.
+
+Make it clear on product detail pages whether customers are buying a pair or a single watch.
+
+## 16. SMART AND SPORTS WATCHES FEATURE
+
+Create a contemporary section highlighting functional watch styles without abandoning the luxury design language.
+
+Use two editorial tiles:
+
+Sports Watches:
+
+- Bold, durable-looking watch photography.
+- Dark neutral or forest-green background.
+- Heading: “Move with Confidence.”
+- CTA: “EXPLORE SPORTS WATCHES.”
+
+Smart Watches:
+
+- Modern smartwatch photography.
+- Minimal, contemporary styling.
+- Heading: “A Smarter Way to Wear Time.”
+- CTA: “EXPLORE SMART WATCHES.”
+
+Make both tiles clickable and responsive.
+
+Do not make unsupported technical claims about the products.
+
+## 17. JOURNAL SECTION
+
+Create a refined editorial journal with three article cards.
+
+Heading:
+
+“Notes on Time”
+
+Supporting text:
+
+“Stories on personal style, watch design, and the details that matter.”
+
+Suggested articles:
+
+- “Finding the Right Watch for Your Everyday Style”
+- “How to Choose a Thoughtful Watch Gift”
+- “A Guide to Classic and Contemporary Watch Designs”
+
+Each article card should include:
+
+- Unique relevant image.
+- Article category.
+- Headline.
+- Short excerpt.
+- “READ STORY” link.
+
+Create a journal listing page and reusable article template if feasible.
+
+Use original content. Avoid fake author credentials or unsupported claims.
+
+## 18. NEWSLETTER SECTION
+
+Create a premium newsletter signup section before the footer.
+
+Heading:
+
+“A Note from VALTER”
+
+Supporting text:
+
+“Be the first to discover new collections, thoughtful styling ideas, and stories from our world.”
+
+Include:
+
+- Email input.
+- Subscribe button.
+- Email validation.
+- Accessible labels.
+- Appropriate feedback states.
+- Privacy policy link.
+
+Use a deep forest-green background, ivory text, a fine border around the input, and subtle gold details.
+
+Do not claim a user has subscribed unless the submission is actually processed by a configured service.
+
+## 19. FOOTER
+
+Build a sophisticated footer with a dark green background.
+
+Desktop layout:
+
+- VALTER emblem and wordmark on the left.
+- Shop navigation.
+- Customer care links.
+- Brand links.
+- Newsletter and supported social links.
+
+Shop links:
+
+- All Watches
+- Men's Watches
+- Women's Watches
+- Couple Watches
+- Luxury Watches
+- Sports Watches
+- Smart Watches
+
+Customer care:
+
+- Contact
+- FAQs
+- Shipping
+- Returns
+- Warranty
+
+Brand:
+
+- Our Story
+- Journal
+- Privacy Policy
+- Terms and Conditions
+
+Footer tagline:
+
+“Timeless design. Distinctive character.”
+
+Include:
+
+- Subtle dividers.
+- Refined typography.
+- Muted ivory text.
+- Gold accents.
+- Social icons only for configured destinations.
+- Copyright line: “© 2026 VALTER. All rights reserved.”
+
+On mobile, stack the footer columns vertically and keep all links accessible.
+
+## 20. SEARCH FUNCTIONALITY
+
+Implement a working product search experience.
+
+Search should:
+
+- Open from the header.
+- Search product names, descriptions, and categories.
+- Display relevant results with image, name, price, and link.
+- Support all six watch categories.
+- Show a clear empty state.
+- Allow the user to clear the query.
+- Close through an accessible close button or Escape key.
+
+Use the same centralized product data that powers the shop and collection pages.
+
+## 21. PRODUCT DETAIL PAGES
+
+Create a complete product detail page for every product.
+
+Include:
+
+- Product image gallery.
+- Product name.
+- Price.
+- Category.
+- Description.
+- Product specifications.
+- Color or strap variants where applicable.
+- Quantity selector.
+- Stock status.
+- Add-to-cart button.
+- Wishlist action.
+- Shipping and returns information.
+- Related products.
+
+Use a two-column layout on desktop and a stacked layout on mobile.
+
+For couple watches, clearly identify the number of watches included in the purchase.
+
+For smart watches, provide accurate specifications only when known.
+
+For sports watches, display supported functional details without inventing certifications or performance ratings.
+
+Every product detail route must display the correct product.
+
+## 22. CART AND CHECKOUT
+
+Implement a functional shopping cart.
+
+Cart features:
+
+- Add products.
+- Remove products.
+- Increase and decrease quantities.
+- Update subtotals.
+- Calculate totals correctly.
+- Show selected product variants.
+- Display the correct product images.
+- Update the shopping bag count.
+- Preserve the cart across refreshes when browser storage is available.
+- Provide a continue-shopping action.
+
+Create a clean checkout page with:
+
+- Contact details.
+- Shipping details.
+- Order summary.
+- Input validation.
+- Clear total pricing.
+- A final review step.
+
+Use a configured currency consistently. The initial sample catalog uses USD, but currency must be editable through store configuration.
+
+Do not claim that real payments or orders have been processed unless a real backend and payment gateway are integrated.
+
+If live payments are not configured, clearly label checkout as a demo or provide a safe order-review flow. Never expose secret payment credentials in frontend code.
+
+## 23. ACCOUNT AND WISHLIST
+
+Create an account interface and wishlist experience.
+
+Account:
+
+- Sign-in form.
+- Registration form if supported.
+- Password validation.
+- Clear error and success states.
+- Secure backend integration point.
+
+Wishlist:
+
+- Add and remove products.
+- Display saved product cards.
+- Link to product details.
+- Allow adding a saved item to the cart.
+
+If no authentication backend exists, implement a clearly labeled demonstration interface or local-only wishlist. Do not claim secure account creation or authentication without a real service.
+
+## 24. IMAGE GENERATION AND QUALITY
+
+Generate or source premium watch photography automatically wherever the available environment supports it.
+
+Create unique images for:
+
+- Homepage hero.
+- Men's watch collection.
+- Women's watch collection.
+- Couple watch collection.
+- Luxury watch collection.
+- Sports watch collection.
+- Smart watch collection.
+- Featured products.
+- Brand story.
+- Campaign banner.
+- Journal articles.
+- New arrivals.
+
+Photography requirements:
+
+- Photorealistic luxury product photography.
+- Correct watch proportions.
+- Realistic dial markings and watch hands.
+- Detailed metal bracelet links.
+- Natural glass reflections.
+- Realistic leather and rubber textures.
+- Carefully controlled studio lighting.
+- Soft shadows.
+- Warm stone and cream backgrounds for product cards.
+- Deep green and charcoal backgrounds for campaigns.
+- Clean compositions.
+- No watermarks.
+- No embedded promotional text.
+- No distorted components.
+- No unrelated objects.
+
+Each major collection must have a distinct visual identity while remaining part of the same brand.
+
+Do not reuse the same image for every category or product.
+
+Use valid image assets. Never display broken images, blank boxes, unresolved URLs, or generic gray placeholders.
+
+If automatic image generation is unavailable, use properly licensed images or another valid source and organize the assets so they can be replaced later.
+
+Use local optimized image assets where practical. Provide descriptive alt text and responsive sizing.
+
+## 25. ANIMATIONS AND MICRO-INTERACTIONS
+
+Implement elegant, subtle interactions:
+
+- Smooth scrolling.
+- Refined sticky header behavior.
+- Product image zoom on hover.
+- Underline transitions on navigation.
+- Smooth mega-menu opening and closing.
+- Animated search overlay.
+- Cart drawer transitions.
+- Subtle section reveal effects.
+- Button hover and pressed states.
+- Wishlist confirmation.
+- Add-to-cart feedback.
+- Accordion transitions where applicable.
+
+Keep transitions around 180–350ms.
+
+Respect the prefers-reduced-motion setting.
+
+Do not use excessive parallax, distracting animations, or movement that delays access to shopping controls.
+
+## 26. RESPONSIVE DESIGN
+
+Build mobile-first and test all major pages.
+
+Desktop:
+
+- Wide editorial layouts.
+- Three-column category layouts.
+- Four-column product grids where appropriate.
+- Large hero image.
+- Spacious navigation.
+- Multi-column footer.
+
+Tablet:
+
+- Two-column category grids.
+- Two- or three-column product grids.
+- Balanced image and text proportions.
+- Compact navigation.
+
+Mobile:
+
+- Responsive header and menu.
+- Stacked hero.
+- Two-column category cards when readable.
+- Two-column product grid where appropriate.
+- One-column layout on narrow screens when needed.
+- Touch-friendly controls.
+- Full-width primary CTAs when useful.
+- Readable typography.
+- No horizontal overflow.
+- No overlapping content.
+- No clipped images or buttons.
+
+Test approximately 360px, 390px, 430px, 768px, 1024px, 1280px, and 1440px screen widths.
+
+Every page, category, menu, filter, and product detail must remain functional on mobile.
+
+## 27. TECHNICAL STACK AND CODE STRUCTURE
+
+Use a modern stack compatible with Google AI Studio and Hostinger.
+
+Preferred stack:
+
+- React.
+- TypeScript.
+- Vite.
+- Modular reusable components.
+- CSS Modules or well-structured global CSS.
+- Lucide icons or inline SVG.
+- React Router or another appropriate routing solution.
+
+Suggested structure:
+
+- App
+- Header
+- MegaMenu
+- MobileMenu
+- SearchOverlay
+- HeroSection
+- TrustStrip
+- CategoryGrid
+- CategoryCard
+- FeaturedCollection
+- ProductCard
+- ProductGrid
+- BrandStory
+- CoupleWatchFeature
+- SmartSportsFeature
+- CampaignBanner
+- JournalSection
+- NewsletterForm
+- Footer
+- ShopPage
+- CollectionPage
+- ProductDetailPage
+- CartDrawer
+- CartPage
+- CheckoutPage
+- AccountPage
+- WishlistPage
+- AboutPage
+- ContactPage
+- PolicyPage
+- NotFoundPage
+
+Maintain one centralized catalog data source for all products and collections.
+
+Each product should include:
+
+- ID.
+- Name.
+- Slug.
+- Price.
+- Currency.
+- Category.
+- Description.
+- Main image.
+- Additional images.
+- Product specifications.
+- Variants where applicable.
+- Stock status.
+- Optional new-arrival flag.
+- Optional collection-specific metadata.
+
+Make category filtering, search, cart operations, wishlist actions, and product routing use this same source.
+
+Avoid duplicated product information and unnecessary dependencies.
+
+## 28. HOSTINGER DEPLOYMENT
+
+The website must be suitable for deployment on Hostinger.
+
+For a static React/Vite website:
+
+- Include a valid package.json.
+- Provide working development and production build scripts.
+- Ensure the production build completes successfully.
+- Generate production files in the expected `dist` directory.
+- Ensure image and asset paths work after deployment.
+- Configure SPA route fallback using an appropriate Hostinger rewrite configuration.
+- Avoid dependencies on a development server.
+- Keep secrets out of frontend code.
+- Document any backend requirements.
+
+Provide a README explaining:
+
+1. How to install dependencies.
+2. How to run the website locally.
+3. How to build the production version.
+4. Where the deployable files are generated.
+5. How to upload the build to Hostinger.
+6. How to configure routing.
+7. How to change products, images, prices, currency, and contact information.
+8. How to configure payments, subscriptions, and authentication if required.
+
+Ensure deployment instructions correspond to the actual generated project.
+
+## 29. PERFORMANCE, ACCESSIBILITY, AND SEO
+
+Performance:
+
+- Optimize image sizes.
+- Use WebP or AVIF when appropriate.
+- Lazy-load below-the-fold images.
+- Prioritize the hero image.
+- Prevent layout shifts.
+- Minimize unnecessary dependencies.
+- Avoid console errors.
+- Use appropriate caching recommendations.
+
+Accessibility:
+
+- Semantic HTML.
+- Logical heading hierarchy.
+- Keyboard navigation.
+- Visible focus states.
+- Accessible icon labels.
+- Form labels.
+- Meaningful image alt text.
+- Sufficient contrast.
+- Reduced-motion support.
+- Accessible dropdowns and dialogs.
+
+SEO:
+
+- Unique page titles.
+- Meta descriptions.
+- Canonical URLs where appropriate.
+- Open Graph metadata.
+- Descriptive page URLs.
+- Product metadata based on real catalog values.
+- Sitemap and robots.txt where appropriate.
+- Internal links.
+- Custom 404 page.
+
+Homepage title:\
+“VALTER | Premium Watches for Every Style”
+
+Homepage description:\
+“Discover VALTER timepieces across men's, women's, couple, luxury, sports, and smart watch collections. Find a design that reflects your style.”
+
+## 30. CONVERSION-FOCUSED SHOPPING EXPERIENCE
+
+Make shopping straightforward and visually appealing.
+
+Ensure visitors can:
+
+- Discover the six categories immediately.
+- Browse the entire catalog.
+- Filter by category.
+- Search products.
+- Compare products through their descriptions and specifications.
+- Open individual product pages.
+- Select available variants.
+- Add products to the cart.
+- Manage quantities.
+- Review totals.
+- Continue to checkout.
+- Find customer support and policy information.
+
+Use clear CTAs:
+
+- EXPLORE ALL WATCHES
+- SHOP MEN'S WATCHES
+- SHOP WOMEN'S WATCHES
+- SHOP COUPLE WATCHES
+- SHOP LUXURY WATCHES
+- SHOP SPORTS WATCHES
+- SHOP SMART WATCHES
+- VIEW DETAILS
+- ADD TO BAG
+- VIEW ALL WATCHES
+- CONTINUE SHOPPING
+- PROCEED TO CHECKOUT
+
+Do not use fake discounts, fabricated scarcity, fake reviews, misleading countdown timers, or unsupported popularity claims.
+
+## 31. FINAL QUALITY ASSURANCE
+
+Before completing the project, verify that:
+
+- All six watch categories are visible on the homepage.
+- Each category has unique photography.
+- Each category opens the correct collection page.
+- Product cards display the correct product name, image, and price.
+- Search works.
+- Filters work.
+- Sorting works.
+- Product details load correctly.
+- Wishlist actions work.
+- Cart operations work.
+- Quantity changes update totals correctly.
+- Couple-watch quantities and pair descriptions are clear.
+- Smartwatch and sports-watch claims are supported by product data.
+- Header and footer links work.
+- Newsletter and contact forms provide accurate feedback.
+- No broken images remain.
+- No buttons are decorative without a purpose.
+- No important content overflows on mobile.
+- Keyboard navigation works.
+- The production build completes without errors.
+- Hostinger deployment instructions are accurate.
+
+Fix discovered issues rather than merely listing them.
+
+## 32. FINAL VISUAL RESULT
+
+The finished VALTER website must have the visual quality of a premium luxury watch boutique, with a cinematic forest-green hero, elegant editorial typography, warm ivory product sections, six beautifully photographed watch categories, refined product cards, sophisticated lifestyle imagery, polished shopping interactions, and a professional footer.
+
+The homepage must clearly feature:
+
+**MEN'S WATCHES | WOMEN'S WATCHES | COUPLE WATCHES | LUXURY WATCHES | SPORTS WATCHES | SMART WATCHES**
+
+All six categories must be equally intentional parts of the store. Do not prioritize women's watches at the expense of the other categories.
+
+The website must be original, coherent, modern, fully responsive, visually impressive, functional, and suitable for a real client.
+
+**FINAL COMMAND: Build the complete VALTER watch e-commerce website now. Generate all required source files and components, use high-quality imagery wherever possible, implement the six collections and essential shopping features, test responsiveness and functionality, fix errors, and provide a complete Hostinger-ready project with accurate deployment instructions. Do not stop after creating the homepage mockup or describing the design.**
+
+Define the minimum viable first buildSeparate build requirements from polish requests

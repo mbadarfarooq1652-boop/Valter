@@ -1,0 +1,6 @@
+{
+  "name": "VALTER - Premium Watches",
+  "description": "Discover VALTER timepieces across men's, women's, couple, luxury, sports, and smart watch collections. Find a design that reflects your style.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

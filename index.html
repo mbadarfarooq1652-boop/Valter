@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VALTER | Premium Watches for Every Style</title>
+    <meta name="description" content="Discover VALTER timepieces across men's, women's, couple, luxury, sports, and smart watch collections. Find a design that reflects your style." />
+    <meta property="og:title" content="VALTER | Premium Watches for Every Style" />
+    <meta property="og:description" content="Discover VALTER timepieces across men's, women's, couple, luxury, sports, and smart watch collections. Find a design that reflects your style." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      // Compatibility fix for browser extensions attempting to assign to window.fetch
+      (function() {
+        try {
+          var originalFetch = window.fetch ? window.fetch.bind(window) : undefined;
+          var currentFetch = originalFetch;
+          Object.defineProperty(window, 'fetch', {
+            get: function() {
+              return currentFetch;
+            },
+            set: function(val) {
+              currentFetch = typeof val === 'function' ? val : originalFetch;
+            },
+            configurable: true,
+            enumerable: true
+          });
+        } catch (err) {
+          // Ignore if cannot redefine
+        }
+
+        // Filter out third-party browser extension exceptions from bubbling to the app
+        window.addEventListener('error', function(event) {
+          if (event && event.filename && event.filename.indexOf('chrome-extension://') !== -1) {
+            if (typeof event.preventDefault === 'function') event.preventDefault();
+            return true;
+          }
+        }, true);
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

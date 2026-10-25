@@ -1,0 +1,1508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VALTER | Contemporary Luxury Horology</title>
+  <meta name="description" content="Discover VALTER luxury timepieces across Men's, Women's, Couple, Luxury, Sports, and Smart watch collections.">
+  
+  <!-- Fonts: Cormorant Garamond & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              dark: '#082F2B',
+              darker: '#052522',
+              cream: '#EAE3D8',
+              ivory: '#F4F0E9',
+              gold: '#B89A6A',
+              goldHover: '#cbb082',
+              border: '#DED6CA',
+              darkBorder: '#31514A',
+              muted: '#716F66'
+            }
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans: ['"Inter"', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #F4F0E9;
+      color: #1C2925;
+      font-family: 'Inter', sans-serif;
+    }
+    h1, h2, h3, .font-serif {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+    }
+    ::selection {
+      background-color: #B89A6A;
+      color: #082F2B;
+    }
+    /* Custom luxury scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #EAE3D8;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #B89A6A;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col antialiased">
+
+  <!-- TOAST NOTIFICATION -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 bg-[#082F2B] text-[#F5F0E8] border border-[#B89A6A] px-5 py-3 rounded shadow-2xl flex items-center gap-3 transition-all duration-300 transform translate-y-20 opacity-0 pointer-events-none text-xs font-medium">
+    <span class="w-2 h-2 rounded-full bg-[#B89A6A]"></span>
+    <span id="toast-message">Notification</span>
+  </div>
+
+  <!-- TOP ANNOUNCEMENT BANNER -->
+  <div id="announcement-bar" class="bg-[#082F2B] text-[#F5F0E8] py-2 px-4 text-center text-[10px] sm:text-[11px] tracking-[0.2em] uppercase font-medium border-b border-[#31514A] flex items-center justify-center gap-2">
+    <span class="w-1.5 h-1.5 rounded-full bg-[#B89A6A] animate-pulse"></span>
+    <span id="announcement-text">Complimentary Worldwide Insured Boutique Shipping on All Timepieces</span>
+  </div>
+
+  <!-- MAIN HEADER -->
+  <header class="sticky top-0 z-40 bg-[#F4F0E9]/95 backdrop-blur-md border-b border-[#DED6CA] transition-all">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo / Wordmark -->
+      <a href="#home" onclick="showView('home'); return false;" class="flex items-center gap-3 group focus:outline-none">
+        <div id="brand-logo-container" class="flex items-center gap-2.5">
+          <svg class="w-7 h-7 text-[#082F2B]" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="6">
+            <circle cx="50" cy="50" r="44" stroke="#B89A6A" stroke-width="4" />
+            <circle cx="50" cy="50" r="34" stroke="currentColor" stroke-width="3" />
+            <path d="M50 16 L50 24 M50 76 L50 84 M16 50 L24 50 M76 50 L84 50" stroke="#B89A6A" stroke-width="4" stroke-linecap="round" />
+            <line x1="50" y1="50" x2="50" y2="28" stroke="currentColor" stroke-width="5" stroke-linecap="round" />
+            <line x1="50" y1="50" x2="68" y2="50" stroke="#B89A6A" stroke-width="4" stroke-linecap="round" />
+            <circle cx="50" cy="50" r="4" fill="#B89A6A" />
+          </svg>
+          <div class="flex flex-col">
+            <span id="header-brand-name" class="font-serif text-2xl tracking-[0.25em] font-medium text-[#082F2B] uppercase">VALTER</span>
+            <span id="header-brand-tagline" class="text-[8px] tracking-[0.3em] uppercase text-[#B89A6A] font-semibold -mt-1">GENÈVE</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden lg:flex items-center space-x-7 text-[11px] font-medium tracking-[0.2em] text-[#1C2925]/90 uppercase">
+        <a href="#home" onclick="showView('home'); return false;" class="hover:text-[#B89A6A] transition-colors py-2">HOME</a>
+        <a href="#shop" onclick="filterCatalog('mens-watches'); return false;" class="hover:text-[#B89A6A] transition-colors py-2">MEN</a>
+        <a href="#shop" onclick="filterCatalog('womens-watches'); return false;" class="hover:text-[#B89A6A] transition-colors py-2">WOMEN</a>
+        <a href="#shop" onclick="filterCatalog('couple-watches'); return false;" class="hover:text-[#B89A6A] transition-colors py-2">COUPLES</a>
+        <a href="#shop" onclick="filterCatalog('luxury-watches'); return false;" class="hover:text-[#B89A6A] transition-colors py-2">LUXURY</a>
+        <a href="#shop" onclick="filterCatalog('sports-watches'); return false;" class="hover:text-[#B89A6A] transition-colors py-2">SPORTS</a>
+        <a href="#shop" onclick="filterCatalog('smart-watches'); return false;" class="hover:text-[#B89A6A] transition-colors py-2">SMART</a>
+        <a href="#shop" onclick="filterCatalog('all'); return false;" class="text-[#B89A6A] font-semibold transition-colors py-2">ALL WATCHES</a>
+      </nav>
+
+      <!-- Action Utilities -->
+      <div class="flex items-center space-x-3 sm:space-x-4">
+        <!-- Search -->
+        <button onclick="toggleModal('search-modal', true)" class="p-2 hover:text-[#B89A6A] transition-colors" title="Search Timepieces">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        </button>
+
+        <!-- Wishlist -->
+        <button onclick="toggleDrawer('wishlist-drawer', true)" class="p-2 hover:text-[#B89A6A] transition-colors relative" title="Saved Timepieces">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+          <span id="wishlist-badge" class="absolute top-1 right-1 w-4 h-4 bg-[#B89A6A] text-[#082F2B] font-bold text-[9px] rounded-full flex items-center justify-center hidden">0</span>
+        </button>
+
+        <!-- Cart Bag -->
+        <button onclick="toggleDrawer('cart-drawer', true)" class="p-2 hover:text-[#B89A6A] transition-colors relative" title="Shopping Bag">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <span id="cart-badge" class="absolute top-1 right-1 w-4 h-4 bg-[#B89A6A] text-[#082F2B] font-bold text-[9px] rounded-full flex items-center justify-center hidden">0</span>
+        </button>
+
+        <!-- ADMIN Direct Access Button -->
+        <button onclick="showView('admin')" class="px-3 py-1.5 bg-[#082F2B] hover:bg-[#0B3B35] text-[#B89A6A] text-[10px] tracking-widest uppercase font-bold rounded-xs flex items-center gap-1.5 border border-[#31514A] transition-all shadow-sm" title="Open Master Admin Panel">
+          <svg class="w-3.5 h-3.5 text-[#B89A6A]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span>ADMIN</span>
+        </button>
+
+        <!-- Mobile Menu Hamburger -->
+        <button onclick="toggleDrawer('mobile-nav', true)" class="p-2 text-[#082F2B] lg:hidden">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ==================== VIEW 1: STOREFRONT (HOME & SHOP) ==================== -->
+  <main id="storefront-view" class="flex-1">
+
+    <!-- HERO SECTION -->
+    <section id="hero-section" class="relative bg-[#082F2B] text-[#F5F0E8] overflow-hidden border-b border-[#31514A]">
+      <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#B89A6A_1px,transparent_1px)] [background-size:24px_24px]"></div>
+      
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          <div class="lg:col-span-7 space-y-6">
+            <div class="inline-flex items-center gap-2 px-3 py-1 bg-[#052522] border border-[#31514A] rounded-full text-xs text-[#B89A6A] uppercase tracking-widest font-semibold">
+              <span class="w-2 h-2 rounded-full bg-[#B89A6A]"></span>
+              <span id="hero-eyebrow">HAUTE HORLOGERIE & PRECISION</span>
+            </div>
+
+            <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl leading-[1.08] font-normal">
+              <span id="hero-headline">Timeless Precision for Distinctive</span> <em id="hero-highlight" class="text-[#B89A6A] not-italic font-light">Character.</em>
+            </h1>
+
+            <p id="hero-subheadline" class="text-sm sm:text-base text-[#F5F0E8]/80 max-w-xl leading-relaxed font-light">
+              Meticulously engineered automatic and quartz timepieces designed for connoisseurs of alpine precision, everyday elegance, and enduring luxury.
+            </p>
+
+            <div class="pt-4 flex flex-wrap items-center gap-4">
+              <button onclick="scrollToCatalog()" class="px-8 py-4 bg-[#B89A6A] hover:bg-[#cbb082] text-[#082F2B] font-semibold text-xs tracking-[0.2em] uppercase rounded-xs transition-colors shadow-lg">
+                <span id="hero-primary-cta">EXPLORE ALL TIMEPIECES</span>
+              </button>
+              <button onclick="filterCatalog('luxury-watches')" class="px-8 py-4 bg-transparent hover:bg-white/10 text-[#F5F0E8] border border-[#DED6CA]/40 font-medium text-xs tracking-[0.2em] uppercase rounded-xs transition-colors">
+                <span id="hero-secondary-cta">THE LUXURY EDIT</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="lg:col-span-5 relative flex justify-center">
+            <div class="relative w-full max-w-md aspect-[4/5] bg-gradient-to-b from-[#052522] to-[#082F2B] rounded-sm p-4 border border-[#31514A] shadow-2xl overflow-hidden group">
+              <img id="hero-image" src="./images/hero_emerald_watch_1792603314884.jpg" onerror="this.src='https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&auto=format&fit=crop&q=80'" alt="Featured Watch" class="w-full h-full object-cover rounded-xs transition-transform duration-700 group-hover:scale-105">
+              <div class="absolute bottom-6 left-6 right-6 bg-[#082F2B]/90 backdrop-blur-md border border-[#31514A] p-4 rounded-xs flex items-center justify-between">
+                <div>
+                  <span id="hero-badge-title" class="text-[10px] tracking-widest text-[#B89A6A] uppercase font-semibold block">FLAGSHIP HOROLOGY</span>
+                  <span id="hero-badge-name" class="font-serif text-lg text-white">Valter Emerald Chronometer</span>
+                </div>
+                <button onclick="openProductById('valter-1')" class="px-3 py-1.5 bg-[#B89A6A] text-[#082F2B] text-xs font-bold uppercase rounded-xs hover:bg-[#cbb082]">
+                  VIEW
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST STRIP -->
+    <section class="bg-[#EAE3D8] border-b border-[#DED6CA] py-6 px-4">
+      <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center text-xs text-[#082F2B]">
+        <div class="flex items-center justify-center gap-2.5">
+          <svg class="w-5 h-5 text-[#B89A6A]" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+          <span class="font-medium tracking-wider uppercase text-[11px]">Swiss Movement Calibres</span>
+        </div>
+        <div class="flex items-center justify-center gap-2.5">
+          <svg class="w-5 h-5 text-[#B89A6A]" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span class="font-medium tracking-wider uppercase text-[11px]">2-Year Global Warranty</span>
+        </div>
+        <div class="flex items-center justify-center gap-2.5">
+          <svg class="w-5 h-5 text-[#B89A6A]" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
+          <span class="font-medium tracking-wider uppercase text-[11px]">Insured Worldwide Delivery</span>
+        </div>
+        <div class="flex items-center justify-center gap-2.5">
+          <svg class="w-5 h-5 text-[#B89A6A]" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          <span class="font-medium tracking-wider uppercase text-[11px]">Personal Concierge 24/7</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- THE 6 COLLECTIONS CAROUSEL / GRID -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-8 pb-4 border-b border-[#DED6CA]">
+        <div>
+          <span class="text-[10px] tracking-[0.25em] text-[#B89A6A] uppercase font-semibold">HOROLOGY EDITIONS</span>
+          <h2 class="font-serif text-3xl sm:text-4xl text-[#082F2B]">The Six Distinct Collections</h2>
+        </div>
+        <span class="text-xs text-[#716F66] mt-2 sm:mt-0">Click any collection to filter all timepieces below</span>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+        <!-- Collection 1 -->
+        <button onclick="filterCatalog('mens-watches')" class="group p-3 bg-white border border-[#DED6CA] rounded-sm hover:border-[#B89A6A] hover:shadow-md transition-all text-left">
+          <div class="aspect-square w-full rounded-xs overflow-hidden mb-3 bg-[#EAE3D8]">
+            <img src="./images/cat_mens_watch_1792603314936.jpg" onerror="this.src='https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=500&auto=format&fit=crop&q=60'" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
+          </div>
+          <span class="text-[9px] tracking-widest text-[#B89A6A] uppercase font-bold block">COLLECTION</span>
+          <h3 class="font-serif text-base text-[#082F2B] font-medium group-hover:text-[#B89A6A]">Men's Watches</h3>
+        </button>
+
+        <!-- Collection 2 -->
+        <button onclick="filterCatalog('womens-watches')" class="group p-3 bg-white border border-[#DED6CA] rounded-sm hover:border-[#B89A6A] hover:shadow-md transition-all text-left">
+          <div class="aspect-square w-full rounded-xs overflow-hidden mb-3 bg-[#EAE3D8]">
+            <img src="./images/cat_womens_watch_1792603315966.jpg" onerror="this.src='https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=500&auto=format&fit=crop&q=60'" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
+          </div>
+          <span class="text-[9px] tracking-widest text-[#B89A6A] uppercase font-bold block">COLLECTION</span>
+          <h3 class="font-serif text-base text-[#082F2B] font-medium group-hover:text-[#B89A6A]">Women's Watches</h3>
+        </button>
+
+        <!-- Collection 3 -->
+        <button onclick="filterCatalog('couple-watches')" class="group p-3 bg-white border border-[#DED6CA] rounded-sm hover:border-[#B89A6A] hover:shadow-md transition-all text-left">
+          <div class="aspect-square w-full rounded-xs overflow-hidden mb-3 bg-[#EAE3D8]">
+            <img src="./images/cat_couple_watches_1792603317361.jpg" onerror="this.src='https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=500&auto=format&fit=crop&q=60'" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
+          </div>
+          <span class="text-[9px] tracking-widest text-[#B89A6A] uppercase font-bold block">COLLECTION</span>
+          <h3 class="font-serif text-base text-[#082F2B] font-medium group-hover:text-[#B89A6A]">Couple Watches</h3>
+        </button>
+
+        <!-- Collection 4 -->
+        <button onclick="filterCatalog('luxury-watches')" class="group p-3 bg-white border border-[#DED6CA] rounded-sm hover:border-[#B89A6A] hover:shadow-md transition-all text-left">
+          <div class="aspect-square w-full rounded-xs overflow-hidden mb-3 bg-[#EAE3D8]">
+            <img src="./images/cat_luxury_watch_1792603317321.jpg" onerror="this.src='https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=500&auto=format&fit=crop&q=60'" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
+          </div>
+          <span class="text-[9px] tracking-widest text-[#B89A6A] uppercase font-bold block">COLLECTION</span>
+          <h3 class="font-serif text-base text-[#082F2B] font-medium group-hover:text-[#B89A6A]">Luxury Watches</h3>
+        </button>
+
+        <!-- Collection 5 -->
+        <button onclick="filterCatalog('sports-watches')" class="group p-3 bg-white border border-[#DED6CA] rounded-sm hover:border-[#B89A6A] hover:shadow-md transition-all text-left">
+          <div class="aspect-square w-full rounded-xs overflow-hidden mb-3 bg-[#EAE3D8]">
+            <img src="./images/cat_sports_watch_1792603317550.jpg" onerror="this.src='https://images.unsplash.com/photo-1533139502658-0198f920d8e8?w=500&auto=format&fit=crop&q=60'" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
+          </div>
+          <span class="text-[9px] tracking-widest text-[#B89A6A] uppercase font-bold block">COLLECTION</span>
+          <h3 class="font-serif text-base text-[#082F2B] font-medium group-hover:text-[#B89A6A]">Sports Watches</h3>
+        </button>
+
+        <!-- Collection 6 -->
+        <button onclick="filterCatalog('smart-watches')" class="group p-3 bg-white border border-[#DED6CA] rounded-sm hover:border-[#B89A6A] hover:shadow-md transition-all text-left">
+          <div class="aspect-square w-full rounded-xs overflow-hidden mb-3 bg-[#EAE3D8]">
+            <img src="./images/cat_smart_watch_1792603333900.jpg" onerror="this.src='https://images.unsplash.com/photo-1510017803434-a899398421b3?w=500&auto=format&fit=crop&q=60'" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
+          </div>
+          <span class="text-[9px] tracking-widest text-[#B89A6A] uppercase font-bold block">COLLECTION</span>
+          <h3 class="font-serif text-base text-[#082F2B] font-medium group-hover:text-[#B89A6A]">Smart Watches</h3>
+        </button>
+      </div>
+    </section>
+
+    <!-- TIMEPIECES CATALOG SECTION -->
+    <section id="catalog-section" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <!-- Catalog Controls -->
+      <div class="bg-white p-4 sm:p-6 border border-[#DED6CA] rounded-sm mb-8 flex flex-col md:flex-row items-center justify-between gap-4 shadow-xs">
+        <!-- Category Filter Tabs -->
+        <div class="flex items-center gap-1.5 overflow-x-auto w-full md:w-auto pb-2 md:pb-0 text-xs">
+          <button onclick="filterCatalog('all')" id="tab-all" class="cat-tab px-3.5 py-2 rounded-xs font-semibold uppercase tracking-wider bg-[#082F2B] text-[#F5F0E8] transition-colors">All (18)</button>
+          <button onclick="filterCatalog('mens-watches')" id="tab-mens-watches" class="cat-tab px-3.5 py-2 rounded-xs font-semibold uppercase tracking-wider text-[#716F66] hover:bg-[#EAE3D8] hover:text-[#082F2B] transition-colors">Men's</button>
+          <button onclick="filterCatalog('womens-watches')" id="tab-womens-watches" class="cat-tab px-3.5 py-2 rounded-xs font-semibold uppercase tracking-wider text-[#716F66] hover:bg-[#EAE3D8] hover:text-[#082F2B] transition-colors">Women's</button>
+          <button onclick="filterCatalog('couple-watches')" id="tab-couple-watches" class="cat-tab px-3.5 py-2 rounded-xs font-semibold uppercase tracking-wider text-[#716F66] hover:bg-[#EAE3D8] hover:text-[#082F2B] transition-colors">Couples</button>
+          <button onclick="filterCatalog('luxury-watches')" id="tab-luxury-watches" class="cat-tab px-3.5 py-2 rounded-xs font-semibold uppercase tracking-wider text-[#716F66] hover:bg-[#EAE3D8] hover:text-[#082F2B] transition-colors">Luxury</button>
+          <button onclick="filterCatalog('sports-watches')" id="tab-sports-watches" class="cat-tab px-3.5 py-2 rounded-xs font-semibold uppercase tracking-wider text-[#716F66] hover:bg-[#EAE3D8] hover:text-[#082F2B] transition-colors">Sports</button>
+          <button onclick="filterCatalog('smart-watches')" id="tab-smart-watches" class="cat-tab px-3.5 py-2 rounded-xs font-semibold uppercase tracking-wider text-[#716F66] hover:bg-[#EAE3D8] hover:text-[#082F2B] transition-colors">Smart</button>
+        </div>
+
+        <!-- Sort Select -->
+        <div class="flex items-center gap-3 w-full md:w-auto justify-end text-xs">
+          <span class="text-[#716F66] hidden sm:inline">Sort by:</span>
+          <select id="sort-select" onchange="renderProducts()" class="px-3 py-2 bg-[#F4F0E9] border border-[#DED6CA] rounded-xs text-[#082F2B] focus:outline-none cursor-pointer">
+            <option value="featured">Featured First</option>
+            <option value="price-low">Price: Low to High</option>
+            <option value="price-high">Price: High to Low</option>
+            <option value="name">Name: A to Z</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Products Grid Container -->
+      <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <!-- Rendered dynamically by JavaScript -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== VIEW 2: MASTER ADMIN CONTROL PANEL ==================== -->
+  <main id="admin-view" class="flex-1 bg-[#F4F0E9] text-[#1C2925] hidden">
+
+    <!-- ADMIN PIN LOCK SCREEN (Shown if not unlocked) -->
+    <div id="admin-pin-gate" class="min-h-screen bg-[#082F2B] text-[#F5F0E8] flex items-center justify-center p-4">
+      <div class="max-w-md w-full bg-[#052522] border border-[#31514A] rounded-sm p-8 shadow-2xl text-center">
+        <div class="w-16 h-16 rounded-full bg-[#082F2B] border border-[#B89A6A] flex items-center justify-center mx-auto mb-5 text-[#B89A6A]">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        </div>
+        <span class="text-[10px] tracking-[0.3em] uppercase text-[#B89A6A] font-semibold block mb-1">RESTRICTED SECURITY ACCESS</span>
+        <h2 class="font-serif text-3xl text-white mb-2">VALTER Master Admin Portal</h2>
+        <p class="text-xs text-[#F5F0E8]/70 mb-6 leading-relaxed">
+          Please enter your administrator passkey to manage timepieces, branding, homepage CMS, and client orders.
+        </p>
+
+        <form onsubmit="handleAdminLogin(event)" class="space-y-4">
+          <input type="password" id="admin-pin-input" placeholder="Enter PIN (Default: valter2026)" class="w-full px-4 py-3 bg-[#082F2B] border border-[#31514A] focus:border-[#B89A6A] text-xs text-[#F5F0E8] rounded-xs focus:outline-none">
+          <button type="submit" class="w-full py-3.5 bg-[#B89A6A] hover:bg-[#cbb082] text-[#082F2B] font-semibold text-xs tracking-[0.2em] uppercase rounded-xs transition-colors shadow-md">
+            UNLOCK CONTROL PANEL
+          </button>
+        </form>
+
+        <div class="mt-6 pt-4 border-t border-[#31514A]/70 flex items-center justify-between text-xs text-[#716F66]">
+          <button onclick="unlockDemoAdmin()" class="text-[#B89A6A] hover:underline text-[11px]">1-Click Owner Demo Unlock</button>
+          <button onclick="showView('home')" class="hover:text-white text-[11px]">Back to Storefront</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ADMIN DASHBOARD (Shown when unlocked) -->
+    <div id="admin-dashboard" class="hidden">
+      <!-- Admin Top Nav -->
+      <div class="bg-[#082F2B] text-[#F5F0E8] border-b border-[#31514A] px-4 sm:px-8 py-4 sticky top-0 z-40 shadow-lg">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div class="flex items-center gap-3">
+            <span class="font-serif text-xl tracking-[0.2em] uppercase font-bold text-white">VALTER</span>
+            <span class="bg-[#B89A6A] text-[#082F2B] text-[10px] uppercase font-bold tracking-widest px-2 py-0.5 rounded-xs">MASTER ADMIN CMS</span>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-2 text-xs">
+            <button onclick="showView('home')" class="px-3.5 py-2 bg-[#052522] hover:bg-[#0B3B35] text-[#F5F0E8] border border-[#31514A] rounded-xs flex items-center gap-1.5">
+              <span>View Storefront</span>
+            </button>
+            <button onclick="exportDataBackup()" class="px-3.5 py-2 bg-[#052522] hover:bg-[#0B3B35] text-[#F5F0E8] border border-[#31514A] rounded-xs flex items-center gap-1.5" title="Export JSON database">
+              <span>Export JSON Backup</span>
+            </button>
+            <button onclick="logoutAdmin()" class="px-3 py-2 bg-red-950/60 hover:bg-red-900 text-red-200 border border-red-800/60 rounded-xs">
+              Lock / Exit
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-8 py-8">
+        <!-- Admin Navigation Tabs -->
+        <div class="flex items-center gap-2 overflow-x-auto pb-2 mb-6 border-b border-[#DED6CA]">
+          <button onclick="switchAdminTab('products')" id="admin-tab-products" class="admin-tab-btn px-4 py-2.5 text-xs uppercase tracking-wider font-semibold rounded-xs bg-[#082F2B] text-[#F5F0E8]">
+            Timepieces Catalog
+          </button>
+          <button onclick="switchAdminTab('branding')" id="admin-tab-branding" class="admin-tab-btn px-4 py-2.5 text-xs uppercase tracking-wider font-semibold rounded-xs bg-white text-[#716F66] border border-[#DED6CA]">
+            Brand & Logo
+          </button>
+          <button onclick="switchAdminTab('homepage')" id="admin-tab-homepage" class="admin-tab-btn px-4 py-2.5 text-xs uppercase tracking-wider font-semibold rounded-xs bg-white text-[#716F66] border border-[#DED6CA]">
+            Hero & Homepage CMS
+          </button>
+          <button onclick="switchAdminTab('orders')" id="admin-tab-orders" class="admin-tab-btn px-4 py-2.5 text-xs uppercase tracking-wider font-semibold rounded-xs bg-white text-[#716F66] border border-[#DED6CA]">
+            Client Orders (<span id="admin-orders-count">0</span>)
+          </button>
+        </div>
+
+        <!-- TAB 1: PRODUCTS TABLE & ADD/EDIT -->
+        <div id="admin-pane-products" class="admin-pane space-y-6">
+          <div class="bg-white border border-[#DED6CA] rounded-sm p-4 sm:p-6 shadow-xs flex flex-col sm:flex-row items-center justify-between gap-4">
+            <h3 class="font-serif text-2xl text-[#082F2B]">Watch Catalog Management</h3>
+            <div class="flex items-center gap-3">
+              <button onclick="resetProductsToDefaults()" class="px-3 py-2 text-xs text-[#716F66] hover:text-[#082F2B] border border-[#DED6CA] rounded-xs">
+                Reset Default 18 Models
+              </button>
+              <button onclick="openProductModal()" class="px-4 py-2 bg-[#082F2B] hover:bg-[#0B3B35] text-[#F5F0E8] text-xs font-semibold uppercase tracking-wider rounded-xs">
+                + Add New Timepiece
+              </button>
+            </div>
+          </div>
+
+          <div class="bg-white border border-[#DED6CA] rounded-sm overflow-x-auto shadow-xs">
+            <table class="w-full text-left text-xs">
+              <thead class="bg-[#EAE3D8] text-[#082F2B] uppercase font-semibold border-b border-[#DED6CA]">
+                <tr>
+                  <th class="py-3 px-4">Timepiece</th>
+                  <th class="py-3 px-4">Collection</th>
+                  <th class="py-3 px-4">Price</th>
+                  <th class="py-3 px-4">Stock</th>
+                  <th class="py-3 px-4 text-right">Actions</th>
+                </tr>
+              </thead>
+              <tbody id="admin-products-table-body" class="divide-y divide-[#DED6CA]">
+                <!-- Populated dynamically -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- TAB 2: BRAND & LOGO CMS -->
+        <div id="admin-pane-branding" class="admin-pane hidden space-y-6">
+          <div class="bg-white border border-[#DED6CA] rounded-sm p-6 sm:p-8 shadow-xs">
+            <h3 class="font-serif text-2xl text-[#082F2B] mb-2">Brand Identity & Logo Configuration</h3>
+            <p class="text-xs text-[#716F66] mb-6">Modify brand wordmark or provide a custom image logo.</p>
+
+            <form onsubmit="saveBrandingConfig(event)" class="space-y-4 max-w-xl text-xs">
+              <div>
+                <label class="block font-semibold uppercase text-[#082F2B] mb-1">Brand Name</label>
+                <input type="text" id="cfg-brand-name" class="w-full px-3 py-2 bg-[#F4F0E9] border border-[#DED6CA] rounded-xs text-sm">
+              </div>
+              <div>
+                <label class="block font-semibold uppercase text-[#082F2B] mb-1">Brand Tagline</label>
+                <input type="text" id="cfg-brand-tagline" class="w-full px-3 py-2 bg-[#F4F0E9] border border-[#DED6CA] rounded-xs text-xs">
+              </div>
+              <div>
+                <label class="block font-semibold uppercase text-[#082F2B] mb-1">Custom Logo Image URL (Optional)</label>
+                <input type="text" id="cfg-custom-logo" placeholder="Leave empty for Swiss horology dial emblem" class="w-full px-3 py-2 bg-[#F4F0E9] border border-[#DED6CA] rounded-xs text-xs">
+              </div>
+              <button type="submit" class="px-6 py-2.5 bg-[#082F2B] text-[#F5F0E8] uppercase tracking-wider font-semibold rounded-xs">
+                Save Brand Settings
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- TAB 3: HOMEPAGE CMS -->
+        <div id="admin-pane-homepage" class="admin-pane hidden space-y-6">
+          <div class="bg-white border border-[#DED6CA] rounded-sm p-6 sm:p-8 shadow-xs">
+            <h3 class="font-serif text-2xl text-[#082F2B] mb-2">Homepage & Hero Section CMS</h3>
+            <p class="text-xs text-[#716F66] mb-6">Edit announcement bar, main headlines, subtexts, and buttons.</p>
+
+            <form onsubmit="saveHomepageConfig(event)" class="space-y-4 text-xs">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="md:col-span-2">
+                  <label class="block font-semibold uppercase text-[#082F2B] mb-1">Top Announcement Ribbon</label>
+                  <input type="text" id="cfg-announcement" class="w-full px-3 py-2 bg-[#F4F0E9] border border-[#DED6CA] rounded-xs text-xs">
+                </div>
+                <div>
+                  <label class="block font-semibold uppercase text-[#082F2B] mb-1">Hero Eyebrow</label>
+                  <input type="text" id="cfg-hero-eyebrow" class="w-full px-3 py-2 bg-[#F4F0E9] border border-[#DED6CA] rounded-xs text-xs">
+                </div>
+                <div>
+                  <label class="block font-semibold uppercase text-[#082F2B] mb-1">Hero Headline</label>
+                  <input type="text" id="cfg-hero-headline" class="w-full px-3 py-2 bg-[#F4F0E9] border border-[#DED6CA] rounded-xs text-xs">
+                </div>
+                <div>
+                  <label class="block font-semibold uppercase text-[#082F2B] mb-1">Accent Highlight Word (Gold)</label>
+                  <input type="text" id="cfg-hero-highlight" class="w-full px-3 py-2 bg-[#F4F0E9] border border-[#DED6CA] rounded-xs text-xs">
+                </div>
+                <div>
+                  <label class="block font-semibold uppercase text-[#082F2B] mb-1">Hero Image URL</label>
+                  <input type="text" id="cfg-hero-image" class="w-full px-3 py-2 bg-[#F4F0E9] border border-[#DED6CA] rounded-xs text-xs">
+                </div>
+                <div class="md:col-span-2">
+                  <label class="block font-semibold uppercase text-[#082F2B] mb-1">Hero Subtext</label>
+                  <textarea id="cfg-hero-subheadline" rows="2" class="w-full px-3 py-2 bg-[#F4F0E9] border border-[#DED6CA] rounded-xs text-xs"></textarea>
+                </div>
+              </div>
+              <button type="submit" class="px-6 py-2.5 bg-[#082F2B] text-[#F5F0E8] uppercase tracking-wider font-semibold rounded-xs">
+                Save Homepage CMS
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- TAB 4: ORDERS LEDGER -->
+        <div id="admin-pane-orders" class="admin-pane hidden space-y-6">
+          <div class="bg-white border border-[#DED6CA] rounded-sm p-6 shadow-xs">
+            <h3 class="font-serif text-2xl text-[#082F2B] mb-1">Client Orders Ledger</h3>
+            <p class="text-xs text-[#716F66] mb-6">Real-time orders submitted through the checkout portal.</p>
+            <div id="admin-orders-list" class="space-y-4">
+              <!-- Rendered dynamically -->
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ==================== GLOBAL FOOTER ==================== -->
+  <footer class="bg-[#082F2B] text-[#F5F0E8] border-t border-[#31514A] pt-14 pb-10 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 pb-10 border-b border-[#31514A]">
+      <div class="md:col-span-2 space-y-3">
+        <span class="font-serif text-2xl tracking-[0.25em] font-medium text-white uppercase block">VALTER</span>
+        <p class="text-xs text-[#F5F0E8]/70 max-w-sm leading-relaxed">
+          Alpine inspired Haute Horlogerie. Contemporary timepieces for people who value precision, craftsmanship, and timeless design.
+        </p>
+      </div>
+
+      <div>
+        <h4 class="text-[11px] font-semibold tracking-[0.25em] uppercase text-[#B89A6A] mb-3">COLLECTIONS</h4>
+        <ul class="space-y-2 text-xs text-[#F5F0E8]/80">
+          <li><a href="#shop" onclick="filterCatalog('mens-watches'); return false;" class="hover:text-[#B89A6A]">Men's Watches</a></li>
+          <li><a href="#shop" onclick="filterCatalog('womens-watches'); return false;" class="hover:text-[#B89A6A]">Women's Watches</a></li>
+          <li><a href="#shop" onclick="filterCatalog('couple-watches'); return false;" class="hover:text-[#B89A6A]">Couple Pair Sets</a></li>
+          <li><a href="#shop" onclick="filterCatalog('luxury-watches'); return false;" class="hover:text-[#B89A6A]">Haute Luxury</a></li>
+          <li><a href="#shop" onclick="filterCatalog('sports-watches'); return false;" class="hover:text-[#B89A6A]">Sports Chronographs</a></li>
+          <li><a href="#shop" onclick="filterCatalog('smart-watches'); return false;" class="hover:text-[#B89A6A]">Titanium Smartwatch</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-[11px] font-semibold tracking-[0.25em] uppercase text-[#B89A6A] mb-3">OWNER ACCESS</h4>
+        <ul class="space-y-2 text-xs text-[#F5F0E8]/80">
+          <li>
+            <button onclick="showView('admin')" class="text-[#B89A6A] hover:underline font-semibold">
+              Master Admin Control Panel
+            </button>
+          </li>
+          <li class="text-[#716F66]">Default PIN: <code class="text-white">valter2026</code></li>
+          <li><span class="text-[#716F66]">Geneva & Milan Design Studios</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-[#716F66]">
+      <p>© 2026 VALTER Genève. All rights reserved.</p>
+      <div class="flex gap-4 mt-2 sm:mt-0">
+        <a href="#privacy" class="hover:text-white">Privacy Policy</a>
+        <a href="#terms" class="hover:text-white">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== MODALS & DRAWERS ==================== -->
+
+  <!-- PRODUCT DETAIL MODAL -->
+  <div id="product-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs hidden">
+    <div class="bg-white max-w-2xl w-full rounded-sm border border-[#DED6CA] shadow-2xl p-6 relative max-h-[90vh] overflow-y-auto">
+      <button onclick="toggleModal('product-modal', false)" class="absolute top-4 right-4 text-[#716F66] hover:text-[#082F2B] p-1">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 items-center">
+        <div class="aspect-square bg-[#EAE3D8] rounded-xs overflow-hidden border border-[#DED6CA]">
+          <img id="modal-product-img" src="" class="w-full h-full object-cover">
+        </div>
+        <div>
+          <span id="modal-product-cat" class="text-[10px] tracking-widest text-[#B89A6A] uppercase font-bold block mb-1">COLLECTION</span>
+          <h3 id="modal-product-name" class="font-serif text-2xl text-[#082F2B] font-medium mb-1">Watch Name</h3>
+          <p id="modal-product-desc" class="text-xs text-[#716F66] leading-relaxed mb-4">Description</p>
+          
+          <div class="text-xl font-serif text-[#082F2B] font-bold mb-4">
+            $<span id="modal-product-price">0</span>
+          </div>
+
+          <div class="space-y-1.5 text-[11px] text-[#716F66] border-t border-b border-[#DED6CA] py-3 mb-5">
+            <div><strong>Movement:</strong> <span id="modal-product-movement">Automatic Calibre</span></div>
+            <div><strong>Case:</strong> <span id="modal-product-case">316L Stainless Steel</span></div>
+            <div><strong>Crystal:</strong> Sapphire Crystal (Anti-Reflective)</div>
+            <div><strong>Water Resistance:</strong> 50m / 5 ATM</div>
+          </div>
+
+          <div class="flex gap-3">
+            <button id="modal-add-cart-btn" class="flex-1 py-3 bg-[#082F2B] hover:bg-[#0B3B35] text-[#F5F0E8] font-semibold text-xs tracking-wider uppercase rounded-xs transition-colors">
+              Add to Bag
+            </button>
+            <button id="modal-wishlist-btn" class="p-3 border border-[#DED6CA] hover:bg-[#EAE3D8] rounded-xs text-[#082F2B] transition-colors" title="Save to Wishlist">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SHOPPING CART DRAWER -->
+  <div id="cart-drawer" class="fixed inset-0 z-50 flex justify-end bg-black/60 backdrop-blur-xs hidden">
+    <div class="bg-[#F4F0E9] text-[#1C2925] max-w-md w-full h-full shadow-2xl p-6 flex flex-col justify-between overflow-y-auto">
+      <div>
+        <div class="flex items-center justify-between pb-4 border-b border-[#DED6CA]">
+          <h3 class="font-serif text-xl text-[#082F2B]">Your Shopping Bag</h3>
+          <button onclick="toggleDrawer('cart-drawer', false)" class="text-[#716F66] hover:text-[#082F2B]">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>
+          </button>
+        </div>
+        <div id="cart-items-container" class="divide-y divide-[#DED6CA] py-4">
+          <!-- Cart items rendered here -->
+        </div>
+      </div>
+
+      <div class="border-t border-[#DED6CA] pt-4 space-y-3">
+        <div class="flex justify-between text-sm font-semibold text-[#082F2B]">
+          <span>Subtotal</span>
+          <span>$<span id="cart-subtotal">0</span></span>
+        </div>
+        <p class="text-[11px] text-[#716F66]">Complimentary boutique insured worldwide shipping applied.</p>
+        <button onclick="openCheckout()" class="w-full py-3.5 bg-[#082F2B] hover:bg-[#0B3B35] text-[#F5F0E8] font-semibold text-xs tracking-widest uppercase rounded-xs transition-colors">
+          PROCEED TO CHECKOUT
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- WISHLIST DRAWER -->
+  <div id="wishlist-drawer" class="fixed inset-0 z-50 flex justify-end bg-black/60 backdrop-blur-xs hidden">
+    <div class="bg-[#F4F0E9] text-[#1C2925] max-w-md w-full h-full shadow-2xl p-6 flex flex-col justify-between overflow-y-auto">
+      <div>
+        <div class="flex items-center justify-between pb-4 border-b border-[#DED6CA]">
+          <h3 class="font-serif text-xl text-[#082F2B]">Saved Timepieces</h3>
+          <button onclick="toggleDrawer('wishlist-drawer', false)" class="text-[#716F66] hover:text-[#082F2B]">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>
+          </button>
+        </div>
+        <div id="wishlist-items-container" class="divide-y divide-[#DED6CA] py-4">
+          <!-- Wishlist rendered here -->
+        </div>
+      </div>
+      <button onclick="toggleDrawer('wishlist-drawer', false)" class="w-full py-3 border border-[#DED6CA] text-xs font-semibold uppercase hover:bg-white rounded-xs">
+        Close Wishlist
+      </button>
+    </div>
+  </div>
+
+  <!-- SEARCH OVERLAY -->
+  <div id="search-modal" class="fixed inset-0 z-50 bg-[#082F2B]/95 backdrop-blur-md p-6 flex flex-col items-center justify-start pt-20 hidden">
+    <button onclick="toggleModal('search-modal', false)" class="absolute top-6 right-6 text-white p-2">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+    <div class="max-w-xl w-full">
+      <span class="text-[10px] tracking-[0.3em] uppercase text-[#B89A6A] font-semibold block mb-2 text-center">SEARCH CATALOG</span>
+      <input type="text" id="search-input" oninput="handleSearch(this.value)" placeholder="Search by model, dial color, movement..." class="w-full px-5 py-4 bg-white/10 border border-[#31514A] focus:border-[#B89A6A] text-lg text-white rounded-xs focus:outline-none">
+      <div id="search-results" class="mt-6 max-h-80 overflow-y-auto space-y-2">
+        <!-- Results rendered here -->
+      </div>
+    </div>
+  </div>
+
+  <!-- CHECKOUT MODAL -->
+  <div id="checkout-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-xs hidden">
+    <div class="bg-white max-w-lg w-full rounded-sm border border-[#DED6CA] shadow-2xl p-6 sm:p-8 relative max-h-[90vh] overflow-y-auto">
+      <button onclick="toggleModal('checkout-modal', false)" class="absolute top-4 right-4 text-[#716F66]">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+      <h3 class="font-serif text-2xl text-[#082F2B] mb-1">VALTER Boutique Checkout</h3>
+      <p class="text-xs text-[#716F66] mb-5">Provide your delivery details to confirm your order.</p>
+
+      <form onsubmit="handlePlaceOrder(event)" class="space-y-4 text-xs">
+        <div>
+          <label class="block font-semibold uppercase text-[#082F2B] mb-1">Full Name</label>
+          <input type="text" id="chk-name" required placeholder="Lord/Lady Alexander Sterling" class="w-full px-3 py-2 bg-[#F4F0E9] border border-[#DED6CA] rounded-xs">
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block font-semibold uppercase text-[#082F2B] mb-1">Phone Number</label>
+            <input type="tel" id="chk-phone" required placeholder="+1 555-0192" class="w-full px-3 py-2 bg-[#F4F0E9] border border-[#DED6CA] rounded-xs">
+          </div>
+          <div>
+            <label class="block font-semibold uppercase text-[#082F2B] mb-1">Email</label>
+            <input type="email" id="chk-email" required placeholder="client@valter.com" class="w-full px-3 py-2 bg-[#F4F0E9] border border-[#DED6CA] rounded-xs">
+          </div>
+        </div>
+        <div>
+          <label class="block font-semibold uppercase text-[#082F2B] mb-1">Shipping Address</label>
+          <input type="text" id="chk-address" required placeholder="Penthouse 4B, 100 Regent Street, London" class="w-full px-3 py-2 bg-[#F4F0E9] border border-[#DED6CA] rounded-xs">
+        </div>
+        <div>
+          <label class="block font-semibold uppercase text-[#082F2B] mb-1">Payment Method</label>
+          <select id="chk-payment" class="w-full px-3 py-2 bg-[#F4F0E9] border border-[#DED6CA] rounded-xs">
+            <option>Cash on Delivery / Boutique Insured Courier</option>
+            <option>Bank Wire Transfer / Concierge Protocol</option>
+            <option>Credit Card (Visa / Mastercard / Amex)</option>
+          </select>
+        </div>
+
+        <div class="p-3 bg-[#EAE3D8] rounded-xs flex justify-between font-serif text-base text-[#082F2B] font-bold">
+          <span>Total Payable:</span>
+          <span>$<span id="checkout-total">0</span></span>
+        </div>
+
+        <button type="submit" class="w-full py-3.5 bg-[#082F2B] hover:bg-[#0B3B35] text-[#F5F0E8] font-semibold text-xs tracking-widest uppercase rounded-xs transition-colors">
+          CONFIRM & PLACE ORDER
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ADD / EDIT PRODUCT MODAL (ADMIN) -->
+  <div id="admin-product-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-xs hidden">
+    <div class="bg-white max-w-lg w-full rounded-sm border border-[#DED6CA] shadow-2xl p-6 relative max-h-[90vh] overflow-y-auto">
+      <button onclick="toggleModal('admin-product-modal', false)" class="absolute top-4 right-4 text-[#716F66]">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+      <h3 id="admin-product-modal-title" class="font-serif text-2xl text-[#082F2B] mb-4">Add Timepiece</h3>
+
+      <form onsubmit="handleSaveProductForm(event)" class="space-y-4 text-xs">
+        <input type="hidden" id="edit-prod-id">
+        <div>
+          <label class="block font-semibold uppercase text-[#082F2B] mb-1">Timepiece Name</label>
+          <input type="text" id="edit-prod-name" required class="w-full px-3 py-2 bg-[#F4F0E9] border border-[#DED6CA] rounded-xs">
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block font-semibold uppercase text-[#082F2B] mb-1">Price (USD $)</label>
+            <input type="number" id="edit-prod-price" required class="w-full px-3 py-2 bg-[#F4F0E9] border border-[#DED6CA] rounded-xs">
+          </div>
+          <div>
+            <label class="block font-semibold uppercase text-[#082F2B] mb-1">Collection</label>
+            <select id="edit-prod-category" class="w-full px-3 py-2 bg-[#F4F0E9] border border-[#DED6CA] rounded-xs">
+              <option value="mens-watches">Men's Watches</option>
+              <option value="womens-watches">Women's Watches</option>
+              <option value="couple-watches">Couple Watches</option>
+              <option value="luxury-watches">Luxury Watches</option>
+              <option value="sports-watches">Sports Watches</option>
+              <option value="smart-watches">Smart Watches</option>
+            </select>
+          </div>
+        </div>
+        <div>
+          <label class="block font-semibold uppercase text-[#082F2B] mb-1">Image URL</label>
+          <input type="text" id="edit-prod-image" required class="w-full px-3 py-2 bg-[#F4F0E9] border border-[#DED6CA] rounded-xs font-mono">
+        </div>
+        <div>
+          <label class="block font-semibold uppercase text-[#082F2B] mb-1">Short Description</label>
+          <textarea id="edit-prod-desc" rows="2" class="w-full px-3 py-2 bg-[#F4F0E9] border border-[#DED6CA] rounded-xs"></textarea>
+        </div>
+        <div class="flex items-center gap-3">
+          <input type="checkbox" id="edit-prod-stock" checked class="w-4 h-4 accent-[#082F2B]">
+          <label for="edit-prod-stock" class="font-medium">In Stock</label>
+        </div>
+        <button type="submit" class="w-full py-3 bg-[#082F2B] text-[#F5F0E8] font-semibold uppercase tracking-wider rounded-xs">
+          Save Timepiece
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==================== JAVASCRIPT LOGIC ==================== -->
+  <script>
+    // INITIAL 18 WATCHES DATASET
+    const DEFAULT_PRODUCTS = [
+      {
+        id: 'valter-1',
+        name: 'Valter Emerald Sovereign Chronometer',
+        category: 'mens-watches',
+        categoryLabel: "Men's Watches",
+        price: 490,
+        image: './images/hero_emerald_watch_1792603314884.jpg',
+        description: 'Sunburst forest-emerald dial framed in 316L satin-brushed steel with gold-accented indices.',
+        inStock: true
+      },
+      {
+        id: 'valter-2',
+        name: 'Valter Alpine Obsidian Automatic',
+        category: 'mens-watches',
+        categoryLabel: "Men's Watches",
+        price: 440,
+        image: './images/cat_mens_watch_1792603314936.jpg',
+        description: 'Matte black architectural dial with high-contrast hands and exhibition sapphire caseback.',
+        inStock: true
+      },
+      {
+        id: 'valter-3',
+        name: 'Valter Heritage Navy Chronograph',
+        category: 'mens-watches',
+        categoryLabel: "Men's Watches",
+        price: 395,
+        image: './images/cat_sports_watch_1792603317550.jpg',
+        description: 'Tri-compax chronograph configuration with date window and hand-stitched cognac calfskin leather.',
+        inStock: true
+      },
+      {
+        id: 'valter-4',
+        name: 'Valter Champagne Celestia Petite',
+        category: 'womens-watches',
+        categoryLabel: "Women's Watches",
+        price: 380,
+        image: './images/cat_womens_watch_1792603315966.jpg',
+        description: 'Slender champagne sunray dial with diamond-cut faceted hands and five-link gold bracelet.',
+        inStock: true
+      },
+      {
+        id: 'valter-5',
+        name: 'Valter Rose Aurora Petite Diamond',
+        category: 'womens-watches',
+        categoryLabel: "Women's Watches",
+        price: 420,
+        image: './images/cat_womens_watch_1792603315966.jpg',
+        description: 'Mother-of-pearl shimmering dial with 18k rose gold PVD bezel and concealed butterfly clasp.',
+        inStock: true
+      },
+      {
+        id: 'valter-6',
+        name: 'Valter Carré Minimalist Quartz',
+        category: 'womens-watches',
+        categoryLabel: "Women's Watches",
+        price: 340,
+        image: './images/cat_womens_watch_1792603315966.jpg',
+        description: 'Art-deco geometric proportions with fluted crown and interchangeable Milanese mesh strap.',
+        inStock: true
+      },
+      {
+        id: 'valter-7',
+        name: 'Valter Eternité Dual Silver & Rose Pair',
+        category: 'couple-watches',
+        categoryLabel: "Couple Watches",
+        price: 780,
+        image: './images/cat_couple_watches_1792603317361.jpg',
+        description: 'Harmonious his & hers timepieces in silver sunburst and rose gold indices. Luxury presentation box included.',
+        inStock: true
+      },
+      {
+        id: 'valter-8',
+        name: 'Valter Amour Alpine Emerald Pair',
+        category: 'couple-watches',
+        categoryLabel: "Couple Watches",
+        price: 820,
+        image: './images/cat_couple_watches_1792603317361.jpg',
+        description: 'Matching deep forest dials in 40mm and 32mm profiles with Swiss luminous indices.',
+        inStock: true
+      },
+      {
+        id: 'valter-9',
+        name: 'Valter Nocturne Black Dial Duo',
+        category: 'couple-watches',
+        categoryLabel: "Couple Watches",
+        price: 740,
+        image: './images/cat_couple_watches_1792603317361.jpg',
+        description: 'Understated evening black dials with mirror-polished steel bezel for shared celebrations.',
+        inStock: true
+      },
+      {
+        id: 'valter-10',
+        name: 'Valter Grand Complication Tourbillon',
+        category: 'luxury-watches',
+        categoryLabel: "Luxury Watches",
+        price: 1250,
+        image: './images/cat_luxury_watch_1792603317321.jpg',
+        description: 'Open-heart mechanical movement displaying balance escapement with 60-hour power reserve.',
+        inStock: true
+      },
+      {
+        id: 'valter-11',
+        name: 'Valter Royal Champagne Perpetual',
+        category: 'luxury-watches',
+        categoryLabel: "Luxury Watches",
+        price: 980,
+        image: './images/cat_luxury_watch_1792603317321.jpg',
+        description: 'Solid link two-tone bracelet with Roman guilloché dial and anti-reflective sapphire glass.',
+        inStock: true
+      },
+      {
+        id: 'valter-12',
+        name: 'Valter Skeleton Masterpiece Steel',
+        category: 'luxury-watches',
+        categoryLabel: "Luxury Watches",
+        price: 1100,
+        image: './images/cat_luxury_watch_1792603317321.jpg',
+        description: 'Fully skeletonized bridge architecture showcasing gears and Geneva striping.',
+        inStock: true
+      },
+      {
+        id: 'valter-13',
+        name: 'Valter Marinemaster 200 Diver',
+        category: 'sports-watches',
+        categoryLabel: "Sports Watches",
+        price: 460,
+        image: './images/cat_sports_watch_1792603317550.jpg',
+        description: 'Unidirectional 120-click ceramic bezel with Super-LumiNova markers and 200m water resistance.',
+        inStock: true
+      },
+      {
+        id: 'valter-14',
+        name: 'Valter Rallye Chronograph Tachymeter',
+        category: 'sports-watches',
+        categoryLabel: "Sports Watches",
+        price: 430,
+        image: './images/cat_sports_watch_1792603317550.jpg',
+        description: 'Motorsport racing dial with high-beat split-seconds timer and perforated calfskin strap.',
+        inStock: true
+      },
+      {
+        id: 'valter-15',
+        name: 'Valter Apex Tactical Field Automatic',
+        category: 'sports-watches',
+        categoryLabel: "Sports Watches",
+        price: 390,
+        image: './images/cat_sports_watch_1792603317550.jpg',
+        description: 'DLC matte black scratch-resistant coating with 24-hour military inner dial.',
+        inStock: true
+      },
+      {
+        id: 'valter-16',
+        name: 'Valter Connected Horizon Titanium',
+        category: 'smart-watches',
+        categoryLabel: "Smart Watches",
+        price: 520,
+        image: './images/cat_smart_watch_1792603333900.jpg',
+        description: 'Grade 5 aerospace titanium chassis with sapphire glass AMOLED display and 14-day battery life.',
+        inStock: true
+      },
+      {
+        id: 'valter-17',
+        name: 'Valter Smart Pulse Sapphire Sport',
+        category: 'smart-watches',
+        categoryLabel: "Smart Watches",
+        price: 460,
+        image: './images/cat_smart_watch_1792603333900.jpg',
+        description: 'Comprehensive optical biometric sensors, GPS, and custom watch faces designed in Switzerland.',
+        inStock: true
+      },
+      {
+        id: 'valter-18',
+        name: 'Valter Hybrid Executive Rose Gold',
+        category: 'smart-watches',
+        categoryLabel: "Smart Watches",
+        price: 490,
+        image: './images/cat_smart_watch_1792603333900.jpg',
+        description: 'Physical mechanical clock hands combined with a discrete OLED notification screen.',
+        inStock: true
+      }
+    ];
+
+    // STATE INITIALIZATION
+    let products = JSON.parse(localStorage.getItem('valter_products')) || DEFAULT_PRODUCTS;
+    let cart = JSON.parse(localStorage.getItem('valter_cart')) || [];
+    let wishlist = JSON.parse(localStorage.getItem('valter_wishlist')) || [];
+    let orders = JSON.parse(localStorage.getItem('valter_orders')) || [];
+    let siteConfig = JSON.parse(localStorage.getItem('valter_site_config')) || {
+      brandName: 'VALTER',
+      brandTagline: 'GENÈVE',
+      customLogoUrl: '',
+      announcement: 'Complimentary Worldwide Insured Boutique Shipping on All Timepieces',
+      heroEyebrow: 'HAUTE HORLOGERIE & PRECISION',
+      heroHeadline: 'Timeless Precision for Distinctive',
+      heroHighlight: 'Character.',
+      heroSubheadline: 'Meticulously engineered automatic and quartz timepieces designed for connoisseurs of alpine precision, everyday elegance, and enduring luxury.',
+      heroImage: './images/hero_emerald_watch_1792603314884.jpg'
+    };
+
+    let currentCategory = 'all';
+    let isAdminUnlocked = false;
+
+    // SAVE STATE HELPERS
+    function saveProducts() { localStorage.setItem('valter_products', JSON.stringify(products)); }
+    function saveCart() { localStorage.setItem('valter_cart', JSON.stringify(cart)); updateBadges(); }
+    function saveWishlist() { localStorage.setItem('valter_wishlist', JSON.stringify(wishlist)); updateBadges(); }
+    function saveOrders() { localStorage.setItem('valter_orders', JSON.stringify(orders)); }
+    function saveSiteConfig() { localStorage.setItem('valter_site_config', JSON.stringify(siteConfig)); applySiteConfig(); }
+
+    // TOAST
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      document.getElementById('toast-message').innerText = msg;
+      t.classList.remove('translate-y-20', 'opacity-0', 'pointer-events-none');
+      setTimeout(() => {
+        t.classList.add('translate-y-20', 'opacity-0', 'pointer-events-none');
+      }, 3000);
+    }
+
+    // MODAL TOGGLER
+    function toggleModal(id, show) {
+      const el = document.getElementById(id);
+      if (show) el.classList.remove('hidden');
+      else el.classList.add('hidden');
+    }
+    function toggleDrawer(id, show) { toggleModal(id, show); }
+
+    // APPLY CONFIG TO DOM
+    function applySiteConfig() {
+      document.getElementById('header-brand-name').innerText = siteConfig.brandName;
+      document.getElementById('header-brand-tagline').innerText = siteConfig.brandTagline;
+      document.getElementById('announcement-text').innerText = siteConfig.announcement;
+      document.getElementById('hero-eyebrow').innerText = siteConfig.heroEyebrow;
+      document.getElementById('hero-headline').innerText = siteConfig.heroHeadline;
+      document.getElementById('hero-highlight').innerText = siteConfig.heroHighlight;
+      document.getElementById('hero-subheadline').innerText = siteConfig.heroSubheadline;
+      if (siteConfig.heroImage) document.getElementById('hero-image').src = siteConfig.heroImage;
+
+      // Populate Admin CMS inputs
+      document.getElementById('cfg-brand-name').value = siteConfig.brandName;
+      document.getElementById('cfg-brand-tagline').value = siteConfig.brandTagline;
+      document.getElementById('cfg-custom-logo').value = siteConfig.customLogoUrl || '';
+      document.getElementById('cfg-announcement').value = siteConfig.announcement;
+      document.getElementById('cfg-hero-eyebrow').value = siteConfig.heroEyebrow;
+      document.getElementById('cfg-hero-headline').value = siteConfig.heroHeadline;
+      document.getElementById('cfg-hero-highlight').value = siteConfig.heroHighlight;
+      document.getElementById('cfg-hero-subheadline').value = siteConfig.heroSubheadline;
+      document.getElementById('cfg-hero-image').value = siteConfig.heroImage;
+    }
+
+    // UPDATE HEADER BADGES
+    function updateBadges() {
+      const cCount = cart.reduce((sum, item) => sum + item.qty, 0);
+      const cBadge = document.getElementById('cart-badge');
+      if (cCount > 0) {
+        cBadge.innerText = cCount;
+        cBadge.classList.remove('hidden');
+      } else {
+        cBadge.classList.add('hidden');
+      }
+
+      const wCount = wishlist.length;
+      const wBadge = document.getElementById('wishlist-badge');
+      if (wCount > 0) {
+        wBadge.innerText = wCount;
+        wBadge.classList.remove('hidden');
+      } else {
+        wBadge.classList.add('hidden');
+      }
+
+      renderCartDrawer();
+      renderWishlistDrawer();
+    }
+
+    // RENDER PRODUCTS
+    function renderProducts() {
+      const grid = document.getElementById('products-grid');
+      const sort = document.getElementById('sort-select').value;
+
+      let filtered = products.filter(p => currentCategory === 'all' || p.category === currentCategory);
+
+      if (sort === 'price-low') filtered.sort((a,b) => a.price - b.price);
+      else if (sort === 'price-high') filtered.sort((a,b) => b.price - a.price);
+      else if (sort === 'name') filtered.sort((a,b) => a.name.localeCompare(b.name));
+
+      grid.innerHTML = filtered.map(p => `
+        <div class="group bg-white border border-[#DED6CA] rounded-sm p-4 flex flex-col justify-between hover:border-[#B89A6A] hover:shadow-lg transition-all duration-300">
+          <div>
+            <div class="relative aspect-square w-full rounded-xs overflow-hidden mb-4 bg-[#EAE3D8]">
+              <img src="${p.image}" onerror="this.src='https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&auto=format&fit=crop&q=60'" alt="${p.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <button onclick="toggleWishlist('${p.id}')" class="absolute top-2.5 right-2.5 p-2 rounded-full bg-white/90 text-[#082F2B] hover:text-[#B89A6A] shadow-sm">
+                <svg class="w-4 h-4 ${wishlist.includes(p.id) ? 'fill-[#B89A6A] text-[#B89A6A]' : ''}" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+              </button>
+            </div>
+            <span class="text-[9px] uppercase tracking-widest text-[#B89A6A] font-bold block mb-1">${p.categoryLabel || p.category}</span>
+            <h4 onclick="openProductById('${p.id}')" class="font-serif text-lg text-[#082F2B] font-medium cursor-pointer group-hover:text-[#B89A6A] transition-colors leading-snug mb-2">${p.name}</h4>
+            <p class="text-[11px] text-[#716F66] line-clamp-2 leading-relaxed mb-4">${p.description}</p>
+          </div>
+          <div>
+            <div class="flex items-center justify-between pt-3 border-t border-[#DED6CA] mb-3">
+              <span class="font-serif text-lg text-[#082F2B] font-bold">$${p.price}</span>
+              <span class="text-[10px] font-semibold ${p.inStock ? 'text-emerald-700' : 'text-red-700'}">${p.inStock ? '● In Stock' : 'Out of Stock'}</span>
+            </div>
+            <div class="flex gap-2">
+              <button onclick="openProductById('${p.id}')" class="flex-1 py-2 border border-[#DED6CA] text-[11px] font-semibold uppercase tracking-wider text-[#082F2B] hover:bg-[#F4F0E9] rounded-xs">Details</button>
+              <button onclick="addToCart('${p.id}')" class="flex-1 py-2 bg-[#082F2B] hover:bg-[#0B3B35] text-[11px] font-semibold uppercase tracking-wider text-[#F5F0E8] rounded-xs">Add to Bag</button>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // FILTER CATALOG
+    function filterCatalog(cat) {
+      currentCategory = cat;
+      document.querySelectorAll('.cat-tab').forEach(b => {
+        b.classList.remove('bg-[#082F2B]', 'text-[#F5F0E8]');
+        b.classList.add('text-[#716F66]');
+      });
+      const activeBtn = document.getElementById('tab-' + cat);
+      if (activeBtn) {
+        activeBtn.classList.add('bg-[#082F2B]', 'text-[#F5F0E8]');
+        activeBtn.classList.remove('text-[#716F66]');
+      }
+      renderProducts();
+      scrollToCatalog();
+    }
+
+    function scrollToCatalog() {
+      document.getElementById('catalog-section').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // OPEN PRODUCT DETAIL MODAL
+    function openProductById(id) {
+      const p = products.find(x => x.id === id);
+      if (!p) return;
+      document.getElementById('modal-product-img').src = p.image;
+      document.getElementById('modal-product-cat').innerText = p.categoryLabel || p.category;
+      document.getElementById('modal-product-name').innerText = p.name;
+      document.getElementById('modal-product-desc').innerText = p.description;
+      document.getElementById('modal-product-price').innerText = p.price;
+      document.getElementById('modal-add-cart-btn').onclick = () => { addToCart(p.id); toggleModal('product-modal', false); };
+      document.getElementById('modal-wishlist-btn').onclick = () => { toggleWishlist(p.id); };
+      toggleModal('product-modal', true);
+    }
+
+    // CART OPERATIONS
+    function addToCart(id) {
+      const p = products.find(x => x.id === id);
+      if (!p) return;
+      const existing = cart.find(x => x.id === id);
+      if (existing) existing.qty += 1;
+      else cart.push({ id: p.id, name: p.name, price: p.price, image: p.image, qty: 1 });
+      saveCart();
+      showToast(`Added "${p.name}" to shopping bag.`);
+    }
+
+    function updateCartQty(id, delta) {
+      const item = cart.find(x => x.id === id);
+      if (!item) return;
+      item.qty += delta;
+      if (item.qty <= 0) cart = cart.filter(x => x.id !== id);
+      saveCart();
+    }
+
+    function renderCartDrawer() {
+      const container = document.getElementById('cart-items-container');
+      const subtotalEl = document.getElementById('cart-subtotal');
+      if (cart.length === 0) {
+        container.innerHTML = `<p class="text-xs text-[#716F66] py-8 text-center">Your shopping bag is empty.</p>`;
+        subtotalEl.innerText = '0';
+        return;
+      }
+      let subtotal = 0;
+      container.innerHTML = cart.map(item => {
+        subtotal += item.price * item.qty;
+        return `
+          <div class="py-3 flex items-center justify-between gap-3 text-xs">
+            <img src="${item.image}" class="w-12 h-12 object-cover rounded-xs border border-[#DED6CA]">
+            <div class="flex-1">
+              <h5 class="font-serif text-sm font-medium text-[#082F2B]">${item.name}</h5>
+              <span class="text-[#716F66]">$${item.price} × ${item.qty}</span>
+            </div>
+            <div class="flex items-center gap-1.5">
+              <button onclick="updateCartQty('${item.id}', -1)" class="w-6 h-6 border rounded-xs flex items-center justify-center font-bold text-[#082F2B] hover:bg-[#EAE3D8]">-</button>
+              <span class="w-4 text-center font-semibold">${item.qty}</span>
+              <button onclick="updateCartQty('${item.id}', 1)" class="w-6 h-6 border rounded-xs flex items-center justify-center font-bold text-[#082F2B] hover:bg-[#EAE3D8]">+</button>
+            </div>
+          </div>
+        `;
+      }).join('');
+      subtotalEl.innerText = subtotal;
+    }
+
+    // WISHLIST OPERATIONS
+    function toggleWishlist(id) {
+      if (wishlist.includes(id)) {
+        wishlist = wishlist.filter(x => x !== id);
+        showToast('Removed timepiece from saved wishlist.');
+      } else {
+        wishlist.push(id);
+        showToast('Saved timepiece to wishlist.');
+      }
+      saveWishlist();
+      renderProducts();
+    }
+
+    function renderWishlistDrawer() {
+      const container = document.getElementById('wishlist-items-container');
+      if (wishlist.length === 0) {
+        container.innerHTML = `<p class="text-xs text-[#716F66] py-8 text-center">No saved timepieces yet.</p>`;
+        return;
+      }
+      container.innerHTML = wishlist.map(id => {
+        const p = products.find(x => x.id === id);
+        if (!p) return '';
+        return `
+          <div class="py-3 flex items-center justify-between gap-3 text-xs">
+            <img src="${p.image}" class="w-12 h-12 object-cover rounded-xs border border-[#DED6CA]">
+            <div class="flex-1">
+              <h5 class="font-serif text-sm font-medium text-[#082F2B]">${p.name}</h5>
+              <span class="text-[#716F66]">$${p.price}</span>
+            </div>
+            <button onclick="addToCart('${p.id}')" class="px-3 py-1.5 bg-[#082F2B] text-white text-[10px] uppercase font-bold rounded-xs">Add</button>
+          </div>
+        `;
+      }).join('');
+    }
+
+    // SEARCH
+    function handleSearch(q) {
+      const res = document.getElementById('search-results');
+      if (!q.trim()) { res.innerHTML = ''; return; }
+      const match = products.filter(p => p.name.toLowerCase().includes(q.toLowerCase()) || p.description.toLowerCase().includes(q.toLowerCase()));
+      if (match.length === 0) {
+        res.innerHTML = `<p class="text-xs text-white/70 py-4 text-center">No timepieces matching "${q}".</p>`;
+        return;
+      }
+      res.innerHTML = match.map(p => `
+        <div onclick="openProductById('${p.id}'); toggleModal('search-modal', false);" class="p-3 bg-white/10 hover:bg-white/20 rounded-xs flex items-center justify-between cursor-pointer text-xs text-white">
+          <div class="flex items-center gap-3">
+            <img src="${p.image}" class="w-10 h-10 object-cover rounded-xs">
+            <div>
+              <h6 class="font-serif text-base">${p.name}</h6>
+              <span class="text-[10px] text-[#B89A6A] uppercase">${p.categoryLabel || p.category}</span>
+            </div>
+          </div>
+          <span class="font-serif text-base font-bold text-[#B89A6A]">$${p.price}</span>
+        </div>
+      `).join('');
+    }
+
+    // CHECKOUT
+    function openCheckout() {
+      if (cart.length === 0) {
+        showToast('Your shopping bag is empty.');
+        return;
+      }
+      toggleDrawer('cart-drawer', false);
+      const total = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+      document.getElementById('checkout-total').innerText = total;
+      toggleModal('checkout-modal', true);
+    }
+
+    function handlePlaceOrder(e) {
+      e.preventDefault();
+      const order = {
+        id: 'ORD-' + Math.floor(100000 + Math.random() * 900000),
+        client: document.getElementById('chk-name').value,
+        phone: document.getElementById('chk-phone').value,
+        email: document.getElementById('chk-email').value,
+        address: document.getElementById('chk-address').value,
+        payment: document.getElementById('chk-payment').value,
+        items: [...cart],
+        total: cart.reduce((sum, item) => sum + item.price * item.qty, 0),
+        status: 'Pending',
+        date: new Date().toLocaleString()
+      };
+
+      orders.unshift(order);
+      saveOrders();
+      cart = [];
+      saveCart();
+      toggleModal('checkout-modal', false);
+      showToast(`Order #${order.id} placed successfully! Thank you.`);
+    }
+
+    // ==================== ADMIN PANEL LOGIC ====================
+    function showView(view) {
+      if (view === 'admin') {
+        document.getElementById('storefront-view').classList.add('hidden');
+        document.getElementById('admin-view').classList.remove('hidden');
+        if (isAdminUnlocked) {
+          document.getElementById('admin-pin-gate').classList.add('hidden');
+          document.getElementById('admin-dashboard').classList.remove('hidden');
+          renderAdminProducts();
+          renderAdminOrders();
+        } else {
+          document.getElementById('admin-pin-gate').classList.remove('hidden');
+          document.getElementById('admin-dashboard').classList.add('hidden');
+        }
+      } else {
+        document.getElementById('storefront-view').classList.remove('hidden');
+        document.getElementById('admin-view').classList.add('hidden');
+      }
+      window.scrollTo(0, 0);
+    }
+
+    function handleAdminLogin(e) {
+      e.preventDefault();
+      const pin = document.getElementById('admin-pin-input').value;
+      if (pin === 'valter2026' || pin === 'admin123' || pin === 'admin') {
+        isAdminUnlocked = true;
+        showView('admin');
+        showToast('Admin Control Panel Unlocked.');
+      } else {
+        alert('Incorrect PIN. Default is: valter2026');
+      }
+    }
+
+    function unlockDemoAdmin() {
+      isAdminUnlocked = true;
+      showView('admin');
+      showToast('Admin Control Panel Unlocked via Demo Key.');
+    }
+
+    function logoutAdmin() {
+      isAdminUnlocked = false;
+      showView('home');
+      showToast('Logged out of Admin Portal.');
+    }
+
+    function switchAdminTab(tab) {
+      document.querySelectorAll('.admin-pane').forEach(el => el.classList.add('hidden'));
+      document.querySelectorAll('.admin-tab-btn').forEach(btn => {
+        btn.classList.remove('bg-[#082F2B]', 'text-[#F5F0E8]');
+        btn.classList.add('bg-white', 'text-[#716F66]');
+      });
+      document.getElementById('admin-pane-' + tab).classList.remove('hidden');
+      const activeBtn = document.getElementById('admin-tab-' + tab);
+      activeBtn.classList.add('bg-[#082F2B]', 'text-[#F5F0E8]');
+      activeBtn.classList.remove('bg-white', 'text-[#716F66]');
+    }
+
+    function renderAdminProducts() {
+      const tbody = document.getElementById('admin-products-table-body');
+      tbody.innerHTML = products.map(p => `
+        <tr class="hover:bg-[#F4F0E9]/50">
+          <td class="py-3 px-4 flex items-center gap-3">
+            <img src="${p.image}" class="w-10 h-10 object-cover rounded-xs border border-[#DED6CA]">
+            <div>
+              <span class="font-serif font-medium text-sm text-[#082F2B] block">${p.name}</span>
+              <span class="text-[10px] text-[#716F66]">${p.id}</span>
+            </div>
+          </td>
+          <td class="py-3 px-4">${p.categoryLabel || p.category}</td>
+          <td class="py-3 px-4 font-bold font-serif">$${p.price}</td>
+          <td class="py-3 px-4">
+            <button onclick="toggleProductStock('${p.id}')" class="px-2 py-0.5 rounded-full text-[10px] font-semibold ${p.inStock ? 'bg-emerald-100 text-emerald-800' : 'bg-red-100 text-red-800'}">
+              ${p.inStock ? 'In Stock' : 'Out of Stock'}
+            </button>
+          </td>
+          <td class="py-3 px-4 text-right space-x-2">
+            <button onclick="openEditProduct('${p.id}')" class="px-2.5 py-1 bg-white border border-[#DED6CA] rounded-xs text-[#082F2B] hover:bg-[#EAE3D8]">Edit</button>
+            <button onclick="deleteProduct('${p.id}')" class="px-2.5 py-1 bg-white border border-red-200 text-red-700 hover:bg-red-50 rounded-xs">Delete</button>
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    function toggleProductStock(id) {
+      const p = products.find(x => x.id === id);
+      if (p) {
+        p.inStock = !p.inStock;
+        saveProducts();
+        renderAdminProducts();
+        renderProducts();
+        showToast(`Stock updated for "${p.name}".`);
+      }
+    }
+
+    function deleteProduct(id) {
+      if (confirm('Delete this timepiece from your catalog?')) {
+        products = products.filter(x => x.id !== id);
+        saveProducts();
+        renderAdminProducts();
+        renderProducts();
+        showToast('Timepiece removed from catalog.');
+      }
+    }
+
+    function openProductModal() {
+      document.getElementById('admin-product-modal-title').innerText = 'Add New Timepiece';
+      document.getElementById('edit-prod-id').value = '';
+      document.getElementById('edit-prod-name').value = '';
+      document.getElementById('edit-prod-price').value = '350';
+      document.getElementById('edit-prod-category').value = 'mens-watches';
+      document.getElementById('edit-prod-image').value = './images/hero_emerald_watch_1792603314884.jpg';
+      document.getElementById('edit-prod-desc').value = '';
+      document.getElementById('edit-prod-stock').checked = true;
+      toggleModal('admin-product-modal', true);
+    }
+
+    function openEditProduct(id) {
+      const p = products.find(x => x.id === id);
+      if (!p) return;
+      document.getElementById('admin-product-modal-title').innerText = 'Edit Timepiece';
+      document.getElementById('edit-prod-id').value = p.id;
+      document.getElementById('edit-prod-name').value = p.name;
+      document.getElementById('edit-prod-price').value = p.price;
+      document.getElementById('edit-prod-category').value = p.category;
+      document.getElementById('edit-prod-image').value = p.image;
+      document.getElementById('edit-prod-desc').value = p.description;
+      document.getElementById('edit-prod-stock').checked = p.inStock;
+      toggleModal('admin-product-modal', true);
+    }
+
+    function handleSaveProductForm(e) {
+      e.preventDefault();
+      const id = document.getElementById('edit-prod-id').value;
+      const catVal = document.getElementById('edit-prod-category').value;
+      const catLabels = {
+        'mens-watches': "Men's Watches",
+        'womens-watches': "Women's Watches",
+        'couple-watches': "Couple Watches",
+        'luxury-watches': "Luxury Watches",
+        'sports-watches': "Sports Watches",
+        'smart-watches': "Smart Watches"
+      };
+
+      if (id) {
+        // Edit existing
+        const p = products.find(x => x.id === id);
+        if (p) {
+          p.name = document.getElementById('edit-prod-name').value;
+          p.price = Number(document.getElementById('edit-prod-price').value);
+          p.category = catVal;
+          p.categoryLabel = catLabels[catVal];
+          p.image = document.getElementById('edit-prod-image').value;
+          p.description = document.getElementById('edit-prod-desc').value;
+          p.inStock = document.getElementById('edit-prod-stock').checked;
+        }
+      } else {
+        // Add new
+        const newP = {
+          id: 'valter-' + Date.now(),
+          name: document.getElementById('edit-prod-name').value,
+          price: Number(document.getElementById('edit-prod-price').value),
+          category: catVal,
+          categoryLabel: catLabels[catVal],
+          image: document.getElementById('edit-prod-image').value,
+          description: document.getElementById('edit-prod-desc').value,
+          inStock: document.getElementById('edit-prod-stock').checked
+        };
+        products.unshift(newP);
+      }
+
+      saveProducts();
+      renderAdminProducts();
+      renderProducts();
+      toggleModal('admin-product-modal', false);
+      showToast('Timepiece saved successfully.');
+    }
+
+    function resetProductsToDefaults() {
+      if (confirm('Reset catalog back to initial 18 models?')) {
+        products = JSON.parse(JSON.stringify(DEFAULT_PRODUCTS));
+        saveProducts();
+        renderAdminProducts();
+        renderProducts();
+        showToast('Catalog restored to default 18 timepieces.');
+      }
+    }
+
+    // CMS CONFIG SAVERS
+    function saveBrandingConfig(e) {
+      e.preventDefault();
+      siteConfig.brandName = document.getElementById('cfg-brand-name').value;
+      siteConfig.brandTagline = document.getElementById('cfg-brand-tagline').value;
+      siteConfig.customLogoUrl = document.getElementById('cfg-custom-logo').value;
+      saveSiteConfig();
+      showToast('Brand settings updated.');
+    }
+
+    function saveHomepageConfig(e) {
+      e.preventDefault();
+      siteConfig.announcement = document.getElementById('cfg-announcement').value;
+      siteConfig.heroEyebrow = document.getElementById('cfg-hero-eyebrow').value;
+      siteConfig.heroHeadline = document.getElementById('cfg-hero-headline').value;
+      siteConfig.heroHighlight = document.getElementById('cfg-hero-highlight').value;
+      siteConfig.heroSubheadline = document.getElementById('cfg-hero-subheadline').value;
+      siteConfig.heroImage = document.getElementById('cfg-hero-image').value;
+      saveSiteConfig();
+      showToast('Homepage CMS updated.');
+    }
+
+    function renderAdminOrders() {
+      const list = document.getElementById('admin-orders-list');
+      document.getElementById('admin-orders-count').innerText = orders.length;
+      if (orders.length === 0) {
+        list.innerHTML = `<p class="text-xs text-[#716F66] py-8 text-center">No client orders recorded yet.</p>`;
+        return;
+      }
+      list.innerHTML = orders.map(o => `
+        <div class="border border-[#DED6CA] rounded-sm p-4 bg-[#F4F0E9]/50 text-xs space-y-2">
+          <div class="flex items-center justify-between pb-2 border-b border-[#DED6CA]">
+            <div>
+              <span class="font-serif font-bold text-sm text-[#082F2B]">${o.id}</span>
+              <span class="text-[10px] text-[#716F66] ml-2">(${o.date})</span>
+            </div>
+            <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-amber-100 text-amber-800">${o.status}</span>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px] text-[#716F66]">
+            <div><strong>Client:</strong> ${o.client} (${o.phone})</div>
+            <div><strong>Email:</strong> ${o.email}</div>
+            <div class="sm:col-span-2"><strong>Shipping Address:</strong> ${o.address}</div>
+            <div class="sm:col-span-2"><strong>Payment Protocol:</strong> ${o.payment}</div>
+          </div>
+          <div class="pt-2 border-t border-[#DED6CA] flex items-center justify-between font-serif text-sm">
+            <span>Items: ${o.items.map(i => `${i.name} (×${i.qty})`).join(', ')}</span>
+            <span class="font-bold text-[#082F2B]">$${o.total}</span>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function exportDataBackup() {
+      const data = { siteConfig, products, orders, exportedAt: new Date().toISOString() };
+      const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = `valter_store_backup_${new Date().toISOString().substring(0,10)}.json`;
+      a.click();
+      showToast('Database exported to JSON file.');
+    }
+
+    // INITIAL BOOTSTRAP
+    window.addEventListener('DOMContentLoaded', () => {
+      applySiteConfig();
+      updateBadges();
+      renderProducts();
+    });
+  </script>
+</body>
+</html>
